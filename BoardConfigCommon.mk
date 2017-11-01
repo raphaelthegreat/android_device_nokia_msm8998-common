@@ -125,6 +125,9 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbcon
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 
+# LLVM
+TARGET_USE_SDCLANG := true
+
 # NFC
 TARGET_USES_NQ_NFC := true
 
