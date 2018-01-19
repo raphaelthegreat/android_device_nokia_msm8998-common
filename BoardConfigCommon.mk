@@ -17,6 +17,13 @@
 BOARD_VENDOR := nokia
 COMMON_PATH := device/nokia/msm8998-common
 
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := msm8998
+TARGET_NO_BOOTLOADER := true
+
 # Platform
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
