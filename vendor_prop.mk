@@ -114,6 +114,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hardware.egl=adreno \
 	debug.sf.enable_gl_backpressure=1 \
 	debug.sf.enable_hwc_vds=1 \
+	vendor.display.disable_rotator_downscale=1 \
 	ro.vendor.display.cabl=2
 
 # DRM
