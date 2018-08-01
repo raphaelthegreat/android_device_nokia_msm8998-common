@@ -103,6 +103,7 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/nokia/msm8998
+TARGET_KERNEL_CLANG_COMPILE := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 
