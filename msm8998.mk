@@ -464,8 +464,7 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    libvndfwk_detect_jni.qti.vendor \
-    vndk_package
+    libvndfwk_detect_jni.qti.vendor
 
 # VR
 PRODUCT_PACKAGES += \
