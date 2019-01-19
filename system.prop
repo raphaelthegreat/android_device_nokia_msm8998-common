@@ -33,7 +33,6 @@ persist.vendor.cne.feature=1
 ro.vendor.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
 persist.vendor.data.mode=concurrent
-persist.timed.enable=true
 bt.max.hfpclient.connections=1
 ro.qualcomm.cabl=2
 
@@ -122,6 +121,9 @@ ro.vendor.sensors.mot_detect=true
 ro.vendor.sensors.dpc=true
 ro.vendor.sensors.multishake=true
 persist.vendor.sensors.direct_channel=true
+
+# Timeservice
+persist.vendor.delta_time.enable=true
 
 # WFD
 persist.debug.wfd.enable=1
