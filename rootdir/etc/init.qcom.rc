@@ -465,6 +465,9 @@ on property:sys.boot_completed=1
 
     start qcom-post-boot
 
+    # Starting perf properly
+    setprop vendor.post_boot.parsed 1
+
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
