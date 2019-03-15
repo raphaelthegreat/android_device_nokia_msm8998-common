@@ -36,13 +36,6 @@ persist.vendor.data.mode=concurrent
 bt.max.hfpclient.connections=1
 ro.qualcomm.cabl=2
 
-# Debug
-debug.sf.enable_hwc_vds=1
-debug.sf.latch_unsignaled=1
-debug.gralloc.enable_fb_ubwc=1
-sdm.debug.disable_skip_validate=1
-sdm.perf_hint_window=50
-
 # Display
 vendor.gralloc.enable_fb_ubwc=1
 vendor.display.disable_skip_validate=1
@@ -55,6 +48,17 @@ ro.com.widevine.cachesize=16777216
 
 # Factory reset partition
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Graphics
+debug.sf.enable_hwc_vds=1
+debug.sf.latch_unsignaled=1
+debug.sf.early_app_phase_offset_ns=1500000
+debug.sf.early_phase_offset_ns=1500000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.gralloc.enable_fb_ubwc=1
+sdm.debug.disable_skip_validate=1
+sdm.perf_hint_window=50
 
 # HWUI
 ro.hwui.texture_cache_size=72
