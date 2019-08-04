@@ -159,6 +159,11 @@ on boot
     setprop vendor.usb.qdss.inst.name "qdss"
     setprop sys.usb.configfs 1
 
+on property:sys.boot_completed=1
+    # Restrict permissions to socket file
+    # to hide Magisk & co.
+    chmod 440 /proc/net/unix
+
 #Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
