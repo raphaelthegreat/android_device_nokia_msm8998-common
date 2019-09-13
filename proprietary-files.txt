@@ -114,11 +114,11 @@ vendor/bin/fqcaudioloopback_run.sh
 vendor/bin/headset_mic_to_headset_recv_off.sh
 vendor/bin/headset_mic_to_headset_recv_on.sh
 
+# Bluetooth (AptX) - from crosshatch - QP1A.190711.020
+product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+
 # Bluetooth
--app/aptxals/aptxals.apk
--product/overlay/aptxalsOverlay.apk
-vendor/lib64/libaptX_encoder.so
-vendor/lib64/libaptXHD_encoder.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
