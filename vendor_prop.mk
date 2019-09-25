@@ -122,6 +122,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true \
 	ro.com.widevine.cachesize=16777216
 
+# SurfaceFlinger
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.protected_contents=true \
+	ro.surface_flinger.has_wide_color_display=false \
+	ro.surface_flinger.use_color_management=false \
+    ro.surface_flinger.supports_background_blur=true
+
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.frp.pst=/dev/block/bootdevice/by-name/frp \

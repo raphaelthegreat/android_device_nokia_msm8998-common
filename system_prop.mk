@@ -18,13 +18,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true \
     ro.sys.fw.dex2oat_thread_count=8
 
-# Graphics
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.surface_flinger.has_HDR_display=false \
-    ro.surface_flinger.has_wide_color_display=false \
-    ro.surface_flinger.use_color_management=false \
-    ro.surface_flinger.supports_background_blur=true
-
 # Misc
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.radio.oem_socket=true \
