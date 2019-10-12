@@ -84,6 +84,7 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8998
 
 PRODUCT_PACKAGES += \
+    liba2dpoffload \
     libaudioroute \
     libaacwrapper \
     libaudio-resampler \
@@ -91,6 +92,7 @@ PRODUCT_PACKAGES += \
     libbatterylistener \
     libcirrusspkrprot \
     libcomprcapture \
+    libeffectsconfig \
     libexthwplugin \
     libhdmiedid \
     libhfp \
@@ -99,6 +101,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndmonitor \
     libspkrprot \
+    libssrec \
     libtinycompress \
     libtinycompress.vendor \
     libvolumelistener
@@ -323,7 +326,8 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libOmxG711Enc \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_softomx
 
 # Permissions
 PRODUCT_COPY_FILES += \
