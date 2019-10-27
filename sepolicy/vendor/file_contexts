@@ -8,7 +8,8 @@
 /(vendor|system/vendor)/bin/gx_fpcmd		    u:object_r:gx_fpd_exec:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nokia_nb1		u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nokia_nb1		u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.pixel                      u:object_r:hal_power_stats_default_exec:s0
 
 # Files in rootfs
 /bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
