@@ -19,6 +19,9 @@ COMMON_PATH := device/nokia/msm8998-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
