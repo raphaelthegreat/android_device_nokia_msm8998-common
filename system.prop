@@ -94,6 +94,7 @@ persist.radio.oem_socket=true
 persist.data.tcp_rst_drop=true
 persist.radio.flexmap_type=false
 ro.telephony.call_ring.multiple=false
+ro.telephony.use_old_mnc_mcc_format=true
 
 # Sensors
 ro.vendor.sensors.dev_ori=true
