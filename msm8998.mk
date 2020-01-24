@@ -324,6 +324,11 @@ PRODUCT_PACKAGES += \
     Tag \
     vendor.nxp.hardware.nfc@2.0-service
 
+# Offline charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
