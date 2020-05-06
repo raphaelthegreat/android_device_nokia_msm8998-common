@@ -1,3 +1,6 @@
+# Adsprpcd
+type public_adsprpcd_file, file_type;
+
 # Power
 type sysfs_power_stats, fs_type, sysfs_type;
 

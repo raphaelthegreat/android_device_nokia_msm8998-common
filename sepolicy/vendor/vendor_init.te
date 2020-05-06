@@ -1,5 +1,6 @@
 typeattribute vendor_init data_between_core_and_vendor_violators;
 
+allow init adsprpcd_file:file mounton;
 allow vendor_init {
     system_data_file 
     tombstone_data_file
