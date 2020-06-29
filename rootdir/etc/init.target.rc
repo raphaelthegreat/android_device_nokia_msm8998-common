@@ -293,12 +293,6 @@ service adsprpcd /vendor/bin/adsprpcd
    group media
    disabled
 
-service hbtp /vendor/bin/hbtp_daemon
-    class main
-    user system
-    group system
-    disabled
-
 service vendor.pd_mapper /vendor/bin/pd-mapper
      class core
 
