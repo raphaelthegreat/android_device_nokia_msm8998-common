@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := nokia
 COMMON_PATH := device/nokia/msm8998-common
 
 # Platform
