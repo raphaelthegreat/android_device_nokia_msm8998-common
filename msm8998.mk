@@ -445,6 +445,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service
+
 # VNDK
 # Update this list with what each blob is actually for
 # libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
