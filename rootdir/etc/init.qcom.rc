@@ -208,9 +208,14 @@ on boot
     # Create vpp directory
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
-
     # Create hvdcp_opti directory
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
+
+    # set USB props
+    setprop sys.usb.controller "a800000.dwc3"
+    setprop sys.usb.rndis.func.name "gsi"
+	setprop sys.usb.rmnet.func.name "gsi"
+    setprop sys.usb.configfs 1
 
     #sensors log dir
     mkdir /data/vendor/sensors
