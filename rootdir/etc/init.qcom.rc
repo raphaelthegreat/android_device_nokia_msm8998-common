@@ -385,9 +385,9 @@ on post-fs-data
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
 
-    # NFC
-    mkdir /data/nfc
-    mkdir /etc/param
+    # NFC storage
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    mkdir /data/vendor/nfc/param 0770 nfc nfc
 
 service iop /vendor/bin/iop
     class main
