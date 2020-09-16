@@ -200,6 +200,7 @@ service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
    group media
+   disabled
 
 service hbtp /system/vendor/bin/hbtp_daemon
     class main
