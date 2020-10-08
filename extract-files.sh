@@ -35,44 +35,25 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
-
-while [ "$1" != "" ]; do
-    case $1 in
-        -p | --path )           shift
-                                SRC=$1
-                                ;;
-        -s | --section )        shift
-                                SECTION=$1
-                                CLEAN_VENDOR=true
-                                ;;
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-    esac
-    shift
-done
-
-if [ -z "$SRC" ]; then
-    SRC=adb
+if [ $# -eq 0 ]; then
+  SRC=adb
+else
+  if [ $# -eq 1 ]; then
+    SRC=$1
+  else
+    echo "$0: bad number of arguments"
+    echo ""
+    echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
+    echo ""
+    echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
+    echo "the device using adb pull."
+    exit 1
+  fi
 fi
 
-function blob_fixup() {
-    case "${1}" in
-    vendor/lib64/hw/camera.msm8998.so)
-        patchelf --remove-needed "libMegviiFacepp.so" "${2}"
-        patchelf --remove-needed "libmegface-new.so" "${2}"
-        patchelf --add-needed "libshim_megvii.so" "${2}"
-        ;;
-    # Fix xml version
-    vendor.qti.hardware.data.connection-V1.0-java.xml|vendor.qti.hardware.data.connection-V1.1-java.xml)
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-        ;;
-    esac
-}
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true $CLEAN_VENDOR
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
