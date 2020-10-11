@@ -55,6 +55,16 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/lib64/hw/gxfingerprint.default.so)
+        # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
+        sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
+        ;;
+    # Patch blobs for VNDK
+    vendor/bin/gx_fpd)
+        patchelf --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
+        patchelf --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
+        patchelf --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
+        ;;
     # Fix xml version
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
         sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"

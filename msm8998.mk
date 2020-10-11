@@ -188,7 +188,8 @@ PRODUCT_PACKAGES += \
     Snap \
     Gallery2 \
     libshims_camera \
-    libshims_libui
+    libshims_libui \
+    libbufferhubqueue
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.5 \
@@ -242,7 +243,7 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1 \
-    fingerprint.default
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # For config.fs
 PRODUCT_PACKAGES += \
@@ -501,7 +502,6 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    libbacktrace.vendor \
     libqti_vndfwk_detect.vendor \
     vndk_package
 
