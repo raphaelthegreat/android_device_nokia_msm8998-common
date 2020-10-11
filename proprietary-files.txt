@@ -513,8 +513,6 @@ vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
@@ -638,10 +636,6 @@ vendor/lib64/libOmxQcelp13Enc.so
 vendor/lib64/libOmxVdec.so
 vendor/lib64/libOmxVenc.so
 vendor/lib64/libstagefrighthw.so
-
-# Pasrmanager
-vendor/lib/vendor.qti.power.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 
 # Perf
 etc/perf/wlc_model.tflite
@@ -770,14 +764,6 @@ vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-
-# Qdutils
-product/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-product/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Radio
 etc/permissions/privapp-permissions-qti.xml
@@ -1103,27 +1089,6 @@ vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
-# SSR
-vendor/bin/ssr_diag
-vendor/bin/ssr_setup
-vendor/bin/subsystem_ramdump
-vendor/lib/libSubSystemShutdown.so
-vendor/lib/libsubsystem_control.so
-vendor/lib64/libSubSystemShutdown.so
-vendor/lib64/libsubsystem_control.so
-
-# Soter
--product/framework/vendor.qti.hardware.soter-V1.0-java.jar
-product/lib/vendor.qti.hardware.soter@1.0.so
-product/lib64/vendor.qti.hardware.soter@1.0.so
-vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
-vendor/bin/vendor.qti.hardware.soter@1.0-provision
-vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
-vendor/lib/vendor.qti.hardware.soter@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.soter@1.0.so
-
 # TUI
 product/lib/vendor.qti.hardware.tui_comm@1.0.so
 product/lib64/vendor.qti.hardware.tui_comm@1.0.so
@@ -1155,12 +1120,6 @@ vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
-# UBWC
-vendor/lib/libstreamparser.so
-vendor/lib/libUBWC.so
-vendor/lib64/libstreamparser.so
-vendor/lib64/libUBWC.so
-
 # Vibrator
 vendor/bin/hw/android.hardware.vibrator@1.0-service
 vendor/etc/init/android.hardware.vibrator@1.0-service.rc
@@ -1168,13 +1127,6 @@ vendor/lib/hw/android.hardware.vibrator@1.0-impl.so
 vendor/lib/hw/vibrator.default.so
 vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
 vendor/lib64/hw/vibrator.default.so
-
-# Voice
--product/framework/vendor.qti.voiceprint-V1.0-java.jar
-product/lib/vendor.qti.voiceprint@1.0.so
-product/lib64/vendor.qti.voiceprint@1.0.so
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # WiFi
 bin/iwpriv
