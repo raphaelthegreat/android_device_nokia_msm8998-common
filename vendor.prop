@@ -131,6 +131,7 @@ vendor.hw.fm.init=0
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 ro.boot.gxfp_lv=true
+ro.hardware.fingerprint=goodix
 
 # GL
 ro.hardware.egl=adreno
