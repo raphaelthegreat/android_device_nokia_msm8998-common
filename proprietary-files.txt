@@ -1090,30 +1090,10 @@ vendor/lib/hw/vibrator.default.so
 vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
 vendor/lib64/hw/vibrator.default.so
 
-# WiFi
-bin/iwpriv
--product/framework/vendor.qti.hardware.wigig.netperftuner-V1.0-java.jar
--product/framework/vendor.qti.hardware.wigig.supptunnel-V1.0-java.jar
-product/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
-product/lib/vendor.qti.hardware.wigig.supptunnel@1.0.so
-product/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-product/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
+# Wi-Fi
 vendor/bin/cnss-daemon
-vendor/bin/cnss_diag
-vendor/bin/fstman
-vendor/bin/hw/android.hardware.wifi@1.0-service
-vendor/bin/iwpriv
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.wigig.supptunnel@1.0-service.rc
-vendor/lib/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.1.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.1.so
-vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-vendor/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
 
-# WiFi Display
+# Wi-Fi Display
 bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
