@@ -201,8 +201,7 @@ PRODUCT_PACKAGES += \
     Snap \
     Gallery2 \
     libbufferhubqueue \
-    libmm-qcamera \
-    libfui
+    libmm-qcamera
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
