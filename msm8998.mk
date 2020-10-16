@@ -101,12 +101,19 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libaudio-resampler \
+    libbatterylistener \
+    libcirrusspkrprot \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
     libhfp \
-    libtinycompress \
-    libaudiopreprocessing \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsndmonitor \
+    libspkrprot \
+    libtinycompress \
+    libtinycompress.vendor \
     libvolumelistener \
     tinymix
 
@@ -116,7 +123,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.2-impl \
-    android.hardware.soundtrigger@2.2-service
+    android.hardware.soundtrigger@2.2-service \
+    android.hardware.audio.common@5.0 \
+    android.hardware.audio.common@5.0-util \
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
@@ -182,27 +191,29 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    libbt-vendor
+    liba2dpoffload \
+    libbthost_if \
 
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
     Gallery2 \
-    libshims_camera \
-    libshims_libui \
-    libbufferhubqueue
+    libbufferhubqueue \
+    libmm-qcamera \
+    libfui
 
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    camera.device@3.2-impl \
+    android.hardware.camera.common@1.0 \
+    vendor.qti.hardware.camera.device@1.0
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
+    libcnefeatureconfig
 
 # Configstore
 PRODUCT_PACKAGES += \
@@ -222,14 +233,14 @@ PRODUCT_PACKAGES += \
     libvulkan
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    android.hardware.configstore@1.0-service
+    android.hardware.renderscript@1.0-impl
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -276,7 +287,8 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.0-service \
+    charger_res_images
 
 # HW crypto
 PRODUCT_PACKAGES += \
@@ -356,12 +368,11 @@ PRODUCT_PACKAGES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libextmedia_jni \
+    libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
-    libOmxG711Enc \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
@@ -391,6 +402,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
+    init.recovery.qcom.rc \
+    init.recovery.qcom.usb.rc \
     init.qcom.target.rc \
     init.qcom.fs.rc \
     init.qcom.usb.rc \
