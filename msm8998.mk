@@ -185,7 +185,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
-    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     libqdMetaData.system
 
 PRODUCT_PACKAGES += \
