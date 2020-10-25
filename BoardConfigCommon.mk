@@ -65,16 +65,9 @@ TARGET_USE_QTI_BT_STACK := true
 QCOM_BT_USE_BTNV := true
 QCOM_BT_USE_SMD_TTY := true
 
-# Camera
-BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_USES_QTI_CAMERA_DEVICE := true
-
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(COMMON_PATH)/charger/images
-# Before enabling lineage charger you have to fix it!
-WITH_LINEAGE_CHARGER := false
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
@@ -125,7 +118,7 @@ BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048
-BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
 
 # Properties
 TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
@@ -147,9 +140,8 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/AllHWList/tp_double_tap"
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_NO_RECOVERY := true
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_BLANK_UNBLANK_ON_INIT := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.recovery.qcom
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true

@@ -27,13 +27,7 @@
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
-import /vendor/etc/init/hw/init.qcom.test.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.qcom.factory.rc
-#Fihtdc, add for FIH init rc Begin
-import /vendor/etc/init/hw/init.qcom.target.rc
-import /vendor/etc/init/hw/init.qcom.device.rc
-#Fihtdc, add for FIH init rc End
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -258,9 +252,8 @@ on post-fs-data
     # Create directory for apps access via QTEEConnector
     mkdir /data/vendor/qtee 0770 system system
 
-    #Create folder of camera
+    # Create folder for camera
     mkdir /data/vendor/camera 0770 camera camera
-
 
     #Create directory for tftp
     mkdir /data/vendor/tombstones 0771 system system
@@ -546,6 +539,8 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
+    restart vendor.camera-provider-2-4
+    restart cameraservice
     start qcom-c_main-sh
     start wcnss-service
 
