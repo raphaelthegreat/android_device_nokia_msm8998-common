@@ -28,6 +28,7 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.${ro.boot.device}.target.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -398,18 +399,6 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
-    #+FIH@R3J168: FEATURE_FIH_C_NOKIA_001 (8998), by Pupu
-    # Create NOKIA mcfg related dirs
-    mkdir /data/vendor/fih_atl 2770 system root
-    mkdir /data/vendor/fih_mcfg 0775 system root
-
-    # RC for fih_atl
-    mkdir /data/vendor/fih_atl/modem_config 2770 system root
-    write /data/vendor/radio/atl_complete 0
-    chown system radio /data/vendor/radio/atl_complete
-    chmod 0660 /data/vendor/radio/atl_complete
-    #-FIH@R3J168: FEATURE_FIH_C_NOKIA_001 (8998), by Pupu
-
 service nqnfcinfo /system/vendor/bin/nqnfcinfo
     class late_start
     group nfc
@@ -546,12 +535,6 @@ on property:vold.decrypt=trigger_restart_framework
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
-
-#service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
-#    class core
-#    user vendor_qrtr
-#    group vendor_qrtr
-#    capabilities NET_BIND_SERVICE
 
 service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
@@ -865,21 +848,6 @@ on property:sys.boot_completed=1
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-#+FIH@R3J168: FEATURE_FIH_C_NOKIA_001 (8998), by Pupu
-on property:persist.vendor.radio.nokia_fih_mcfg=1
-    # RC for fih_mcfg
-    write /data/vendor/fih_mcfg/fih_model.txt ${ro.build.display.id}
-    chown system vendor_rfs /data/vendor/fih_mcfg/fih_model.txt
-    chmod 0664 /data/vendor/fih_mcfg/fih_model.txt
-    write /data/vendor/fih_mcfg/mcfg_debug.log ${ro.vendor.build.date}
-    chown system vendor_rfs /data/vendor/fih_mcfg/mcfg_debug.log
-    chmod 0666 /data/vendor/fih_mcfg/mcfg_debug.log
-    write /data/vendor/fih_mcfg/rfs_complete 0
-    chown system vendor_rfs /data/vendor/fih_mcfg/rfs_complete
-    chmod 0666 /data/vendor/fih_mcfg/rfs_complete
-    chown system vendor_rfs /data/vendor/fih_mcfg
-#-FIH@R3J168: FEATURE_FIH_C_NOKIA_001 (8998), by Pupu
-
 service qvop-daemon /vendor/bin/qvop-daemon
     class late_start
     user system
@@ -1050,11 +1018,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     user system
     group system
 
-#service esepmdaemon /system/vendor/bin/esepmdaemon
-#    class core
-#    user system
-#    group nfc
-
 on charger
     setprop persist.sys.usb.config mass_storage
     load_system_props
@@ -1119,13 +1082,6 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      group system
      capabilities SYS_NICE
      disabled
-
-#service chre /vendor/bin/chre
-#    class late_start
-#    user system
-#    group system
-#    socket chre seqpacket 0660 root system
-#    shutdown critical
 
 on property:vendor.chre.enabled=0
    stop chre

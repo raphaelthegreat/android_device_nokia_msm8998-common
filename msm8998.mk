@@ -24,7 +24,8 @@ $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay
+    $(COMMON_PATH)/overlay \
+    $(COMMON_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -399,27 +400,17 @@ PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
-    init.recovery.qcom.usb.rc \
-    init.qcom.target.rc \
-    init.qcom.fs.rc \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.crda.sh \
-    init.mdm.sh \
-    init.qcom.crashdata.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qcom.usb.sh \
-    init.qti.can.sh \
-    init.qti.fm.sh \
-    init.qti.ims.sh \
-    init.qti.qseecomd.sh
+    init.qcom.usb.sh
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -436,7 +427,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
     android.hardware.radio@1.4 \
     android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0
+    android.hardware.secure_element@1.0-service
 
 PRODUCT_PACKAGES += \
     librmnetctl \
