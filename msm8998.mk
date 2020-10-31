@@ -16,9 +16,6 @@
 
 COMMON_PATH := device/nokia/msm8998-common
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 
@@ -382,6 +379,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# Properties
+-include $(COMMON_PATH)/vendor_prop.mk
+
 # QTI
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml \
@@ -425,9 +425,10 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
+    android.hardware.radio@1.3 \
     android.hardware.radio@1.4 \
     android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0-service
+    android.hardware.secure_element@1.0
 
 PRODUCT_PACKAGES += \
     librmnetctl \
@@ -479,9 +480,6 @@ PRODUCT_PACKAGES += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-
-# Verity
-$(call inherit-product, build/target/product/verity.mk)
 
 # Vibrator
 PRODUCT_PACKAGES += \
