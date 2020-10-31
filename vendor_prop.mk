@@ -129,7 +129,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
 	ro.carrier=unknown \
 	keyguard.no_require_sim=true \
-	ro.com.android.dataroaming=true
+	ro.com.android.dataroaming=true \
+	vendor.service.qti.ims.enabled=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \

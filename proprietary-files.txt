@@ -55,6 +55,7 @@ framework/org.ifaa.android.manager.jar
 -lib/libantradio.so
 -lib64/libantradio.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
@@ -131,6 +132,7 @@ vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 
 # Charger
 vendor/bin/hvdcp_opti
@@ -181,6 +183,13 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 vendor/etc/init/cnd.rc
+vendor/lib/libcne.so
+vendor/lib/libcneapiclient.so
+vendor/lib/libcneoplookup.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libwms.so
+vendor/lib/libwqe.so
+vendor/lib/libxml.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -230,6 +239,7 @@ vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
+vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 
 # DRM and SEE
 vendor/bin/qseecomd
@@ -288,6 +298,8 @@ lib/fm_helium.so
 lib/libfm-hci.so
 lib64/fm_helium.so
 lib64/libfm-hci.so
+vendor/lib/ftm_fm_lib.so
+vendor/lib64/ftm_fm_lib.so
 -product/lib/vendor.qti.hardware.fm@1.0.so
 -product/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
@@ -302,6 +314,9 @@ vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/gatekeeper.msm8998.so
 vendor/lib64/hw/gatekeeper.msm8998.so
+
+# CPPF
+vendor/lib/libcppf.so
 
 # GPS
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti
@@ -324,6 +339,7 @@ vendor/lib/libgeofencing.so
 vendor/lib/libgnss.so
 vendor/lib/libgnsspps.so
 vendor/lib/libgps.utils.so
+vendor/lib/libgarden.so
 vendor/lib/libizat_client_api.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
@@ -377,6 +393,10 @@ vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/hw/vulkan.msm8998.so
+vendor/lib/libq3dtools_adreno.so
+vendor/lib/libEGL_adreno.so
+vendor/lib/libqdma.so
+vendor/lib/libqsap_sdk.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -417,12 +437,24 @@ vendor/lib64/libhdr_tm.so
 # Graphics (SDM)
 vendor/lib/libqseed3.so
 -vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libsdm-color.so
+vendor/lib/libsdm-diag.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 -vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
+
+# HBTP
+vendor/lib/libhbtpclient.so
+vendor/lib/libhbtpdsp.so
+vendor/lib/libhbtpfrmwk.so
+
+# HDCP
+vendor/lib/libhdcp1prov.so
+vendor/lib/libhdcp2p2prov.so
+vendor/lib/libhdcpsrm.so
 
 # IFAA
 vendor/lib/vendor.fih.hardware.ifaa@1.0.so
@@ -494,6 +526,8 @@ vendor/lib/libOmxG711Dec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libOmxG711Enc.so
+vendor/lib/libOmxVpp.so
 vendor/lib/libvqzip.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
@@ -514,6 +548,13 @@ vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
+
+# NFC
+vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
+
+# Nokia OZO
+vendor/lib/libozoaudiodecoder.so
+vendor/lib/libozoaudioencoder.so
 
 # PASR Manager
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
@@ -696,6 +737,8 @@ vendor/lib/vendor.qti.hardware.radio.qtiradio@2.1.so
 vendor/lib/vendor.qti.hardware.radio.qtiradio@2.2.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.1.so
+vendor/lib/vendor.qti.hardware.radio.uim@1.2.so
+vendor/lib/vendor.qti.hardware.radio.qtiradio@2.3.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0.so
@@ -721,6 +764,11 @@ vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
+vendor/lib/libril-qc-hal-qmi.so
+vendor/lib/libril-qc-qmi-1.so
+vendor/lib/libril-qc-radioconfig.so
+vendor/lib/libril-qcril-hook-oem.so
+vendor/lib/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/qcrild_librilutils.so
@@ -826,6 +874,8 @@ vendor/lib/vendor.qti.hardware.radio.ims@1.1.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.2.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.3.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.4.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.5.so
+vendor/lib/vendor.qti.hardware.radio.ims@1.6.so
 vendor/lib/vendor.qti.ims.callinfo@1.0.so
 vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 vendor/lib/vendor.qti.imsrtpservice@2.0.so
@@ -877,6 +927,7 @@ vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveBlobDescriptor_stub.so
 vendor/lib/libscveCommon.so
 vendor/lib/libscveCommon_stub.so
+vendor/lib/libscveFaceLandmarks.so
 vendor/lib/libscveFaceRecognition.so
 vendor/lib/libscveObjectSegmentation.so
 vendor/lib/libscveObjectSegmentation_stub.so
@@ -1012,6 +1063,7 @@ vendor/etc/graphite_ipc_platform_info.xml
 vendor/etc/ozo_config.xml
 -vendor/app/CACertService/CACertService.apk
 -vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
+vendor/bin/hw/rild
 vendor/bin/adpl
 vendor/bin/athdiag
 vendor/bin/diag_callback_sample
@@ -1056,6 +1108,7 @@ vendor/bin/wifilearner
 vendor/bin/wireless_init
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
+vendor/etc/init/rild.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/dpmQmiMgr.rc
@@ -1071,6 +1124,32 @@ vendor/etc/init/init.time_daemon.rc
 vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/netmgrd.rc
 vendor/etc/init/port-bridge.rc
+vendor/lib/librmp.so
+vendor/lib/libdisp-aba.so
+vendor/lib/libdpmqmihal.so
+vendor/lib/liblowi_wifihal.so
+vendor/lib/libmm-hdcpmgr.so
+vendor/lib/liboemcrypto.so
+vendor/lib/libSecureUILib.so
+vendor/lib/libseemore.so
+vendor/lib/libsi.so
+vendor/lib/libsns_low_lat_stream_stub.so
+vendor/lib/libspl.so
+vendor/lib/libssrec.so
+vendor/lib/libtinyxml2_1.so
+vendor/lib/libpvr.so
+vendor/lib/libtzdrmgenprov.so
+vendor/lib/libvndfwk_detect_jni.qti.so
+vendor/lib/libvpphvx.so
+vendor/lib/libvpplibrary.so
+vendor/lib/qcrild_librilutils.so
+vendor/lib/qtibus.so
+vendor/lib/libaoa.so
+vendor/lib/libbase64.so
+vendor/lib/libc++_shared.so
+vendor/lib/libGPQTEEC_vendor.so
+vendor/lib/libGPTEE_vendor.so
+vendor/lib/libQTEEConnector_vendor.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libcacertclient.so
 vendor/lib/libchrome.so

@@ -414,9 +414,10 @@ PRODUCT_PACKAGES += \
 
 # RCS
 PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -424,6 +425,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.1 \
     android.hardware.radio@1.2 \
     android.hardware.radio@1.3 \
     android.hardware.radio@1.4 \
@@ -431,6 +433,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0
 
 PRODUCT_PACKAGES += \
+    rild \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full
