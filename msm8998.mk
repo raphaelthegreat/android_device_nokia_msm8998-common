@@ -98,6 +98,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8998
 
 PRODUCT_PACKAGES += \
+    libaudioroute \
+    libaacwrapper \
     libaudio-resampler \
     libbatterylistener \
     libcirrusspkrprot \
@@ -119,11 +121,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@5.0-impl \
-    android.hardware.audio.effect@2.0-service \
-    android.hardware.soundtrigger@2.2-impl \
-    android.hardware.soundtrigger@2.2-service \
-    android.hardware.audio.common@5.0 \
-    android.hardware.audio.common@5.0-util \
+    android.hardware.soundtrigger@2.2-impl
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
@@ -444,6 +442,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0 \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
