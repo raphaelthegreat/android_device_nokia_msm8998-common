@@ -368,7 +368,18 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
+    libOmxG711Enc \
     libstagefrighthw
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml \
+    $(COMMON_PATH)/permissions/com.nxp.nfc.nq.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.nxp.nfc.nq.xml \
+    $(COMMON_PATH)/permissions/com.qti.location.sdk.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.location.sdk.xml \
+    $(COMMON_PATH)/permissions/com.qti.snapdragon.sdk.display.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qti.snapdragon.sdk.display.xml \
+    $(COMMON_PATH)/permissions/com.qualcomm.qti.imscmservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.qualcomm.qti.imscmservice.xml \
+    $(COMMON_PATH)/permissions/qti_libpermissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_libpermissions.xml \
+    $(COMMON_PATH)/permissions/qti_permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_permissions.xml \
 
 # Power
 PRODUCT_PACKAGES += \
@@ -497,6 +508,7 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libgui_vendor \
     libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor \
     vndk_package
 
 # VR
