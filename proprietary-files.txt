@@ -336,6 +336,10 @@ lib/fm_helium.so
 lib/libfm-hci.so
 lib64/fm_helium.so
 lib64/libfm-hci.so
+vendor/bin/fm_qsoc_patches
+vendor/bin/fmconfig
+vendor/bin/fmfactorytest
+vendor/bin/fmfactorytestserver
 vendor/lib/ftm_fm_lib.so
 vendor/lib64/ftm_fm_lib.so
 -product/lib/vendor.qti.hardware.fm@1.0.so
@@ -634,9 +638,6 @@ vendor/lib64/libdiagjni.so
 vendor/lib64/libgameoptfeature.so
 vendor/lib64/libreffeature.so
 vendor/lib64/libskewknob.so
-
-# NFC
-vendor/bin/hw/vendor.nxp.hardware.nfc@1.2-service
 
 # Nokia OZO
 vendor/lib/libozoaudiodecoder.so
