@@ -1,2 +1,5 @@
-allow sensors sysfs:dir r_dir_perms;
-allow sensors sysfs:file rw_file_perms;
+allow sensors init:unix_stream_socket { connectto };
+r_dir_file(sensors, sysfs)
+
+set_prop(sensors, debug_prop)
+set_prop(sensors, diag_prop)

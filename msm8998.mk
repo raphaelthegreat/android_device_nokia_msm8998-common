@@ -22,7 +22,7 @@ $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-lineage
+    $(COMMON_PATH)/overlay-havoc
 
 # Permissions
 PRODUCT_COPY_FILES += \
