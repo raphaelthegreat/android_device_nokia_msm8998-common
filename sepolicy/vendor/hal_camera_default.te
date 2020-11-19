@@ -1,9 +1,2 @@
-allow hal_camera_default sysfs_leds:dir { r_dir_perms };
-allow hal_camera_default sysfs_leds:file { rw_file_perms };
-allow hal_camera_default sysfs_leds:lnk_file { rw_file_perms };
-
-allow hal_camera_default sysfs_torch:dir { r_dir_perms };
-allow hal_camera_default sysfs_torch:file { rw_file_perms };
-allow hal_camera_default sysfs_torch:lnk_file { rw_file_perms };
-
-allow hal_camera_default sysfs_kgsl:lnk_file { r_file_perms };
+typeattribute hal_camera_default vendor_executes_system_violators;
+allow hal_camera_default system_file:file r_file_perms;

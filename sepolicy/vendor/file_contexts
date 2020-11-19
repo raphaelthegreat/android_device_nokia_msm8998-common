@@ -1,55 +1,25 @@
-# Partitions (A/B)
-/dev/block/platform/soc/1da4000\.ufshc/by-name/cda_[ab]                 u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/hidden_[ab]              u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/nvdef_[ab]               u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/splash_[ab]              u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/systeminfo_[ab]          u:object_r:custom_ab_block_device:s0
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine u:object_r:hal_drm_widevine_exec:s0
 
-# Partitions (Non-A/B)
-/dev/block/platform/soc/1da4000\.ufshc/by-name/box                u:object_r:fih_partition:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/deviceinfo         u:object_r:fih_partition:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/securefs           u:object_r:fih_partition:s0
-/dev/block/platform/soc/1da4000\.ufshc/by-name/storsec            u:object_r:boot_block_device:s0
+# Fingerprint
+/dev/goodix_fp                                                u:object_r:fingerprint_device:s0
+/data/misc/gf_data(/.*)?                                      u:object_r:fingerprintd_data_file:s0
+/data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_vendor_data_file:s0
 
-# Data
-/data/vendor/thermal(/.*)?                                               u:object_r:thermal_data_file:s0
+# HVDCP
+/sys/devices(/platform)?/soc/[a-z0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/[a-z0-9]+\.i2c:qcom,[a-z0-9]+@[a-z0-9]:qcom,smb[a-z0-9]+-parallel-slave@[0-9]+/power_supply/parallel(/.*)? u:object_r:sysfs_usb_supply:s0
 
-# Charger
-/(vendor|system/vendor)/bin/charger                                              u:object_r:vendor_charger_exec:s0
+# Files in rootfs
+/bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
+/firmware(/.*)?          u:object_r:firmware_file:s0
 
-# HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey     u:object_r:hal_drm_clearkey_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine     u:object_r:hal_drm_widevine_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service               u:object_r:hal_lineage_touch_default_exec:s0
+# Sensors
+/(vendor|system/vendor)/bin/init\.panel_info\.sh              u:object_r:qti_init_shell_exec:s0
+/(mnt/vendor)/persist/PRSensorData\.txt                       u:object_r:sensors_persist_file:s0
 
-# Keylayout
-/vendor/usr/keylayout(/.*)?                                              u:object_r:vendor_keylayout_file:s0
+# Thermal engine
+/data/decrypt\.txt                                            u:object_r:thermal_decrypt_file:s0
+/data/vendor/thermal(/.*)?                                    u:object_r:thermal_data_file:s0
 
-# Persist
-/(mnt/vendor)/persist/battery(/.*)?                                      u:object_r:persist_battery_file:s0
-
-# Same process hal files
-/(product|system/product)/lib(64)?/vendor\.display\.config@[0-9]\.[0-9]\.so                    u:object_r:same_process_hal_file:s0
-/(product|system/product)/lib(64)?/vendor\.qti\.hardware\.cryptfshw@1\.0\.so                   u:object_r:same_process_hal_file:s0
-/(product|system/product)/lib(64)?/vendor\.qti\.hardware\.camera\.device@1\.0\.so              u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/com\.qualcomm\.qti\.dpm\.api@1\.0\.so                         u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/libqmi_cci\.so                                                u:object_r:same_process_hal_file:s0
-/(vendor|system/vendor)/lib(64)?/vendor\.qti\.gnss@[0-9]\.[0-9]\.so                            u:object_r:same_process_hal_file:s0
-
-# Shell scripts
-/(vendor|system/vendor)/bin/init\.proc_touchpanel\.sh                                          u:object_r:vendor_init_proc_touchpanel_exec:s0
-
-# Sysfs
-/sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/name            u:object_r:sysfs_battery_supply:s0
-
-/sys/class/leds(/.*)?                                                    u:object_r:sysfs_leds:s0
-/sys/devices/soc/leds-qpnp-(.*)?/leds(/.*)?                              u:object_r:sysfs_leds:s0
-/sys/devices/soc/qpnp-flash-led-(.*)?/leds(/.*)?                         u:object_r:sysfs_leds:s0
-/sys/devices/soc/qpnp-wled-(.*)?/leds(/.*)?                              u:object_r:sysfs_leds:s0
-/sys/devices/soc/soc:qcom,camera-flash(/.*)?                             u:object_r:sysfs_leds:s0
-/sys/devices/soc/soc:qcom,camera-flash/leds(/.*)?                        u:object_r:sysfs_leds:s0
-
-/sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)? u:object_r:sysfs_leds:s0
-
-/sys/class/leds/torch-light[0-9](/.*)?                                   u:object_r:sysfs_torch:s0
-/sys/devices/soc/soc:qcom,camera-flash/flashled[0-9](/.*)?               u:object_r:sysfs_torch:s0
+# WiFi
+/vendor/bin/wifi-mac-generator                                u:object_r:wifi-mac-generator_exec:s0

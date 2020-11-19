@@ -1,23 +1,47 @@
-persist.sys.diag.max.size          u:object_r:diag_prop:s0
+# Camera
+camera.boke.                                                  u:object_r:camera_prop:s0
+camera.cts.                                                   u:object_r:camera_prop:s0
+camera.dual.mode                                              u:object_r:camera_prop:s0
+camera.facebeauty.                                            u:object_r:camera_prop:s0
+camera.IMX298.actuator.                                       u:object_r:camera_prop:s0
+camera.s5k3m3.actuator.                                       u:object_r:camera_prop:s0
+cameradaemon.SaveMemAtBoot                                    u:object_r:camera_prop:s0
+cpp.set.clock                                                 u:object_r:camera_prop:s0
+disable.cpp.power.collapse                                    u:object_r:camera_prop:s0
+persist.camera.                                               u:object_r:camera_prop:s0
+persist.vendor.camera.                                        u:object_r:camera_prop:s0
+ubwc.no.compression                                           u:object_r:camera_prop:s0
+vidc.enc.dcvs.extra-buff-count                                u:object_r:camera_prop:s0
+video.disable.ubwc                                            u:object_r:camera_prop:s0
 
-# camera
-persist.camera.                    u:object_r:camera_prop:s0
+# cnss-daemon
+persist.vendor.wigig.npt.enable                               u:object_r:cnss_prop:s0
 
-# netmgrd
-persist.net.doxlat                 u:object_r:vendor_xlat_prop:s0
+# Fingerprint
+fpc_kpi                                                       u:object_r:vendor_fp_prop:s0
+gf.debug.                                                     u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp.                                        u:object_r:vendor_fp_prop:s0
+ro.boot.fpsensor                                              u:object_r:vendor_fp_prop:s0
 
-# radio
-oem.device.imeicache               u:object_r:qcom_ims_prop:s0
-sys.fake_bs_flag0                  u:object_r:system_radio_prop:s0
-sys.fake_bs_flag1                  u:object_r:system_radio_prop:s0
+# Radio
+ro.build.software.version                                     u:object_r:qcom_ims_prop:s0
+ril.fake_bs_flag0                                             u:object_r:vendor_radio_prop:s0
+ril.fake_bs_flag1                                             u:object_r:vendor_radio_prop:s0
 
-# perf
-ro.min_freq_0                      u:object_r:freq_prop:s0
-ro.min_freq_4                      u:object_r:freq_prop:s0
+# Recovery
+ro.build.expect.firmware                                      u:object_r:exported_default_prop:s0
+ro.build.expect.trustzone                                     u:object_r:exported_default_prop:s0
 
-# Thermal
-sys.thermal.                       u:object_r:thermal_normal_prop:s0
+# Sensors
+persist.sys.sensors.                                          u:object_r:vendor_sensors_prop:s0
+sys.panel.                                                    u:object_r:sensors_panel_prop:s0
 
-# WiFi
-wifi.active.interface              u:object_r:wifi_prop:s0
-persist.vendor.wigig.npt.enable    u:object_r:vendor_default_prop:s0
+# Thermal engine
+persist.sys.thermal.                                          u:object_r:thermal_prop:s0
+sys.thermal.                                                  u:object_r:thermal_prop:s0
+
+# vendor_default_prop
+# default_prop isn't accessible from vendor components.
+# So vendor_default_prop should be marked.
+gpu.stats.debug.level                                         u:object_r:vendor_default_prop:s0
+sdm.                                                          u:object_r:vendor_default_prop:s0

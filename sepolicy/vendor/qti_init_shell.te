@@ -1,1 +1,1 @@
-r_dir_file(qti_init_shell, vfat)
+set_prop(qti_init_shell, sensors_panel_prop);
