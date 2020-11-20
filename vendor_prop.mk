@@ -120,7 +120,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	qemu.hw.mainkeys=1 \
 	ro.boot.gxfp_lv=true \
 	sys.gxfp.lv=1 \
-	ro.boot.fp=goodix
+	ro.boot.fp=goodix \
+	ro.hardware.fingerprint=goodix
 
 # HWUI properties
 PRODUCT_PROPERTY_OVERRIDES += \
