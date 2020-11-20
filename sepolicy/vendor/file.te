@@ -1,0 +1,5 @@
+# Health
+type sysfs_healthd, fs_type, sysfs_type, mlstrustedobject;
+
+# Fingerprint
+type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
