@@ -135,7 +135,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware_mnt:/firmware
 
 # Telephony
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 BOARD_USES_QCOM_HARDWARE := true
 
 # Timeservice
