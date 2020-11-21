@@ -224,14 +224,15 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
     libqti_vndfwk_detect.vendor
 
-# GPS
+# GPS / Location
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0-impl-qti:64 \
-    android.hardware.gnss@2.0-service-qti \
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti \
     libbatching \
     libgeofencing \
     libgnss \
-    libwifi-hal-ctrl
+    libgnsspps \
+    libsynergy_loc_api
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
@@ -321,6 +322,7 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor \
     libc2dcolorconvert \
     libmm-omxcore \
     libOmxAacEnc \
