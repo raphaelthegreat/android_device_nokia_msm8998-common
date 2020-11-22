@@ -1,0 +1,6 @@
+allow vndservicemanager gx_fpd:dir search;
+allow vndservicemanager gx_fpd:file { read open };
+allow vndservicemanager gx_fpd:process getattr;
+allow vndservicemanager hal_fingerprint_nb1:process { getattr };
+allow vndservicemanager hal_fingerprint_nb1:dir search;
+allow vndservicemanager hal_fingerprint_nb1:file { r_file_perms read open };

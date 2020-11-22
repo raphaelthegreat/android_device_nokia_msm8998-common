@@ -1,1 +1,2 @@
+allow rild proc_bandinfo:file r_file_perms;
 allow rild rild_file:file r_file_perms;
