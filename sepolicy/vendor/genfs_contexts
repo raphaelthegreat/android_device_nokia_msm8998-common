@@ -1,11 +1,11 @@
 # Rmt
 genfscon debugfs /rmt_storage	u:object_r:debugfs_rmt:s0
 
-# Touchscreen
-genfscon proc /touchpanel	    u:object_r:proc_touchpanel:s0
-  
 # Sensors
 genfscon proc /devmodel         u:object_r:proc_fih:s0
+
+# /proc/baseband - Baseband
+genfscon proc /baseband            u:object_r:proc_fih:s0
 
 # Radio
 genfscon proc /bandinfo         u:object_r:proc_bandinfo:s0

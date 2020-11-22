@@ -26,12 +26,12 @@
 /(mnt/vendor)/persist/sensors(/.*)?                                     u:object_r:persist_sensors_file:s0
 
 # SysFS Files
+/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-0/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,haptics@c000/leds/vibrator(/.*)?		u:object_r:sysfs_leds:s0
 /sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)? u:object_r:sysfs_leds:s0
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/name            u:object_r:sysfs_battery_supply:s0
 /sys/class/leds(/.*)?                                                    u:object_r:sysfs_leds:s0
 /sys/devices/soc/soc:qcom,camera-flash(/.*)?                             u:object_r:sysfs_leds:s0
 /sys/devices/soc/soc:qcom,camera-flash/leds(/.*)?                        u:object_r:sysfs_leds:s0
-/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/input/input[0-9]+/0dbutton                   u:object_r:proc_touchpanel:s0
-/sys/devices/soc/75ba000\.i2c/i2c-12/12-[0-9a-f]+/keys_on                                      u:object_r:proc_touchpanel:s0
+/sys/devices/soc/soc:gpio_keys/input/input5(/.*)?                        u:object_r:sysfs_leds:s0
 /sys/class/leds/torch-light[0-9](/.*)?                                   u:object_r:sysfs_torch:s0
 /sys/devices/soc/soc:qcom,camera-flash/flashled[0-9](/.*)?               u:object_r:sysfs_torch:s0
