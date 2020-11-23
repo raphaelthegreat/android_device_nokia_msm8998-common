@@ -53,10 +53,26 @@ else
   fi
 fi
 
+lib64/libwfdnative.so)
+        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
+        ;;
+    vendor/etc/permissions/qti_libpermissions.xml)
+        sed -i 's|name=\"android.hidl.manager-V1.0-java|name=\"android.hidl.manager@1.0-java|g' "${2}"
+
+
 function blob_fixup() {
     case "${1}" in
-    product/lib64/libdpmframework.so)
+    system_ext/lib64/libdpmframework.so)
         ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
+        ;;
+    system_ext/etc/init/dpmd.rc)
+        sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
+        ;;
+    system_ext/etc/permissions/dpmapi.xml | system_ext/etc/permissions/telephonyservice.xml | system_ext/etc/permissions/com.qti.dpmframework.xml)
+        sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
+        ;;
+    system_ext/etc/permissions/qcrilhook.xml)
+        sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
         ;;
     vendor/lib64/hw/gxfingerprint.default.so)
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
