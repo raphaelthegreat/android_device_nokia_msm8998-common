@@ -4,8 +4,6 @@ set_prop(system_app, fm_prop)
 # zram
 r_dir_file(system_app sysfs_zram)
 
-allow system_app sysfs_torch:file rw_file_perms;
-allow system_app sysfs_torch:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_kcal:dir search;

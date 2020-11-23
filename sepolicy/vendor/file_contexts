@@ -30,8 +30,6 @@
 /sys/devices/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)? u:object_r:sysfs_leds:s0
 /sys/devices/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/name            u:object_r:sysfs_battery_supply:s0
 /sys/class/leds(/.*)?                                                    u:object_r:sysfs_leds:s0
-/sys/devices/soc/soc:qcom,camera-flash(/.*)?                             u:object_r:sysfs_leds:s0
-/sys/devices/soc/soc:qcom,camera-flash/leds(/.*)?                        u:object_r:sysfs_leds:s0
+/sys/devices/soc/soc:qcom,camera-flash@0(/.*)?                           u:object_r:sysfs_leds:s0
+/sys/devices/soc/soc:qcom,camera-flash@1(/.*)?                           u:object_r:sysfs_leds:s0
 /sys/devices/soc/soc:gpio_keys/input/input5(/.*)?                        u:object_r:sysfs_leds:s0
-/sys/class/leds/torch-light[0-9](/.*)?                                   u:object_r:sysfs_torch:s0
-/sys/devices/soc/soc:qcom,camera-flash/flashled[0-9](/.*)?               u:object_r:sysfs_torch:s0
