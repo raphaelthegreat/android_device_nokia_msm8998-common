@@ -101,6 +101,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.ffcolor=ffebb4 \
 	persist.vendor.camera.fdvideo=1
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.cne.feature=1
