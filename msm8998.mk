@@ -21,8 +21,7 @@ $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-lineage
+    $(COMMON_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -421,6 +420,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.1 \
@@ -538,6 +542,8 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    TetheringConfigOverlay \
+    WifiOverlay \
     dhcpcd.conf \
     wificond \
     wpa_supplicant \

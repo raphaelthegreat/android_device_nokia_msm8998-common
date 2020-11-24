@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
+<!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,20 +14,29 @@
      limitations under the License.
 -->
 
-<!-- NOTE: Many variables that used to be in this file have been migrated to
-     CarrierConfigManager.java. Please consider whether new variables belong
-     there before adding to this file. Variables here should be more closely
-     related to devices than to networks. -->
-
 <!-- Phone app resources that may need to be customized
      for different hardware or product builds. -->
 <resources>
-    <!-- Flag indicating if hac is enabled -->
+
+    <!-- Allows the telephony HFA logic to run even if we're not in setup wizard. -->
+    <bool name="config_allow_hfa_outside_of_setup_wizard">false</bool>
+
+    <!-- Show Hearing aids option in  Call Settings -->
     <bool name="hac_enabled">true</bool>
+
+    <!-- Allow handover from telephony calls to another ConnectionService. -->
+    <bool name="config_support_handover_from">true</bool>
+
+    <!-- This device supports the AudioManager Telephony audio device and output onto this
+         device using {@link AudioDeviceInfo#TYPE_TELEPHONY}.
+         This is used to support carriers which generate a recording tone to the remote party
+         when a call recording app is in use. -->
+    <bool name="config_support_telephony_audio_device">true</bool>
 
     <!-- String indicating the package name of the device ImsService implementation for MMTEL. -->
     <string name="config_ims_mmtel_package" translatable="false">org.codeaurora.ims</string>
 
     <!-- String indicating the package name of the device ImsService implementation for RCS. -->
     <string name="config_ims_rcs_package" translatable="false">com.android.service.ims</string>
+
 </resources>
