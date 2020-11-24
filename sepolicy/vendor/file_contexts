@@ -1,6 +1,9 @@
 # Binaries
 /system/bin/chargeonlymode                      u:object_r:charger_exec:s0
 
+# Data
+/data/vendor/misc/audio/acdbdata/delta(/.*)?    u:object_r:acdbdelta_vendor_data_file:s0
+
 # Goodix Fingerprint
 /dev/goodix_fp		                            u:object_r:gx_fpd_device:s0
 /data/system/fingerprint(/.*)?                  u:object_r:gx_fpd_data_file:s0
