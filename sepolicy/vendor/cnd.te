@@ -1,4 +1,4 @@
-allow cnd wifi_prop:file { read open getattr };
+allow cnd self:capability { chown fsetid net_raw };
 
-add_hwservice(cnd,hal_slmadapter_hwservice)
-allow cnd hal_slmadapter_hwservice:hwservice_manager find;
+set_prop(cnd, debug_prop)
+get_prop(cnd, wifi_prop)
