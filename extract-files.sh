@@ -22,6 +22,13 @@ VENDOR=nokia
 
 INITIAL_COPYRIGHT_YEAR=2019
 
+# Check host-OS before doing anything
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    PLATFORM='linux-x86'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    PLATFORM='darwin-x86'
+fi
+
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -34,6 +41,10 @@ if [ ! -f "$HELPER" ]; then
     exit 1
 fi
 . "$HELPER"
+
+# Use prebuilts from tools-lineage
+TOOLS_LINEAGE="$LINEAGE_ROOT"/prebuilts/tools-lineage/"$PLATFORM"/bin
+PATCHELF="$TOOLS_LINEAGE"/patchelf
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
@@ -61,9 +72,9 @@ function blob_fixup() {
         ;;
     # Patch blobs for VNDK
     vendor/bin/gx_fpd)
-        patchelf --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
-        patchelf --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
-        patchelf --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
+        "$PATCHELF" --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
+        "$PATCHELF" --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
+        "$PATCHELF" --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
         ;;
     # Fix xml version
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
