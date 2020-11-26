@@ -155,10 +155,6 @@ include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-   /system/product/lib64/libdpmframework.so|libcutils_shim.so
-
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := 2020-07-01
 

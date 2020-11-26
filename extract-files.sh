@@ -66,6 +66,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    product/lib64/libdpmframework.so)
+        "$PATCHELF" --add-needed "libcutils_shim.so" "${2}"
+        ;;
     vendor/lib64/hw/gxfingerprint.default.so)
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
         sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
