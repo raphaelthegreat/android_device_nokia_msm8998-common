@@ -1,3 +1,6 @@
+# Audio
+/sys/firmware/devicetree/base/soc/sound-9335(/.*)? u:object_r:audio_sysfs:s0
+
 # Binaries
 /system/bin/chargeonlymode                      u:object_r:charger_exec:s0
 
@@ -22,6 +25,16 @@
 
 # Kcal
 /sys/devices/platform/kcal_ctrl.0(/.*)?              u:object_r:sysfs_kcal:s0
+
+# Partitions
+/dev/block/platform/soc/1da4000\.ufshc/sd[abef]      u:object_r:gpt_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]4       u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]9       u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]12      u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]16      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]19      u:object_r:system_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[ef]20      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/sd[cd]        u:object_r:xbl_block_device:s0
 
 # Rild
 /(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0

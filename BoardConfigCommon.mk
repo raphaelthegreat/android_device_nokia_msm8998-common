@@ -112,7 +112,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true 
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
-BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += loop.max_part=7
 
 # Partitions
 BOARD_USES_SYSTEM_OTHER_ODEX := true
@@ -129,10 +129,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_NO_RECOVERY := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/fstab.recovery.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-
-# RIL
-ENABLE_VENDOR_RIL_SERVICE := true
-TARGET_USES_OLD_MNC_FORMAT := true
 
 # Root Directories
 BOARD_ROOT_EXTRA_SYMLINKS := \
