@@ -13,3 +13,4 @@ ro.hardware.nfc_nci=nqx.default
 persist.nfc.support=true
 persist.vendor.radio.lte_vrte_ltd=1
 persist.vendor.radio.voice_on_lte=1
+persist.vendor.data.iwlan.enable=true
