@@ -106,6 +106,9 @@ persist.camera.ffcolor=ffebb4
 persist.vendor.camera.fdvideo=1
 persist.camera.fdvideo=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Misc
 vendor.voice.path.for.pcm.voip=false
 ro.vendor.qti.sys.fw.bg_apps_limit=20
