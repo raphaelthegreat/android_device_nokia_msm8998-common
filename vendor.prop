@@ -1,13 +1,4 @@
 ro.apex.updatable=false
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-mm.enable.smoothstreaming=true
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 ro.config.alarm_alert=Oxygen.ogg
 ro.config.ringtone=Luna.ogg
 ro.config.notification_sound=Europa.ogg
