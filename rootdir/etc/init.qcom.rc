@@ -588,7 +588,7 @@ service loc_launcher /system/vendor/bin/loc_launcher
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
-    group root system radio oem_2903 oem_2904 vendor_rfs
+    group root system radio vendor_rfs
     oneshot
 
 service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
