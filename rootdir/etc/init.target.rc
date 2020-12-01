@@ -115,15 +115,6 @@ on boot
    chown system system /persist/speccfg/submask
    chown system system /persist/speccfg/partition
 
-#install video modules
-   insmod /system/lib/modules/msm-vidc-vmem.ko
-   insmod /system/lib/modules/msm-vidc.ko
-   insmod /system/lib/modules/msm-vidc-dyn-gov.ko
-   insmod /system/lib/modules/msm-vidc-table-gov.ko
-
-#Load WLAN driver
-   insmod /vendor/lib/modules/qca_cld3_wlan.ko
-
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
@@ -239,19 +230,19 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 # Wireless init for wlan_mac.bin
-service wireless-init /system/vendor/bin/wireless_init -i
+service wireless-init /vendor/bin/wireless_init -i
     class main
     user system
     group system
     oneshot
 
-service energy-awareness /system/vendor/bin/energy-awareness
+service energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
     oneshot
 
-service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
