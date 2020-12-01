@@ -345,6 +345,10 @@ PRODUCT_PACKAGES += \
     libOmxG711Enc \
     libstagefrighthw
 
+# Perf
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
+
 # Permissions
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/audiosphere.xml \
