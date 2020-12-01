@@ -437,46 +437,6 @@
         <fqname>@1.0::IDisplayPostproc/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.fih.hardware.ifaa</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IIfaa</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IIfaa/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.fih.hardware.iface</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IIface</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IIface/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.fih.hardware.stabilityDebugCtl</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IstabilityDebugCtl</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IstabilityDebugCtl/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.goodix.hardware.fingerprintextension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IGoodixBiometricsFingerprint</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IGoodixBiometricsFingerprint/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.nxp.hardware.nfc</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
