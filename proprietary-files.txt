@@ -615,10 +615,12 @@ vendor/lib64/vendor.nxp.hardware.nfc@1.1.so
 vendor/lib64/nfc_nci.nqx.default.hw.so
 
 # Nokia OZO
-vendor/lib/libozoaudiodecoder.so
-vendor/lib/libozoaudioencoder.so
 vendor/lib64/libozoaudiodecoder.so
 vendor/lib64/libozoaudioencoder.so
+vendor/lib64/libstagefright_ozodecoder.so
+vendor/lib64/libstagefright_ozoencoder.so
+vendnor/lib64/libstagefright_soft_ozodec.so
+vendnor/lib64/libstagefright_soft_ozoenc.so
 
 # PASR Manager
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
