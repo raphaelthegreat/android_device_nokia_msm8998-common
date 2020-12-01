@@ -121,9 +121,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
-    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@6.0-impl \
-    android.hardware.soundtrigger@2.2-impl
+    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.2-service
 
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
@@ -184,7 +184,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+    vendor.qti.hardware.camera.device@1.0
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -198,12 +199,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8998 \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
-    liboverlay \
     libqdMetaData \
     libqdMetaData.system \
     libtinyxml \
