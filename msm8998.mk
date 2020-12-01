@@ -238,6 +238,11 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-impl-qti:64 \
@@ -488,7 +493,6 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor \
     vndk_package
 
