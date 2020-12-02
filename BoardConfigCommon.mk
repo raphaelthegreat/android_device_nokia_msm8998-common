@@ -61,8 +61,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(COMMON_PATH)/charger/images
-# Before enabling lineage charger you have to fix it!
-WITH_LINEAGE_CHARGER := false
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
