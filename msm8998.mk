@@ -206,6 +206,10 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl
 
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.9 \
+    vendor.display.config@1.9_vendor
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
