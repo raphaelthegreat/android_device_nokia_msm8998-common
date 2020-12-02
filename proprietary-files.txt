@@ -577,12 +577,11 @@ vendor/lib64/libreffeature.so
 vendor/lib64/libskewknob.so
 
 # Nokia OZO
-vendor/lib64/libozoaudiodecoder.so
-vendor/lib64/libozoaudioencoder.so
-vendor/lib64/libstagefright_ozodecoder.so
-vendor/lib64/libstagefright_ozoencoder.so
-vendnor/lib64/libstagefright_soft_ozodec.so
-vendnor/lib64/libstagefright_soft_ozoenc.so
+vendor/lib/libozoaudioencoder.so
+vendor/lib/libstagefright_ozodecoder.so
+vendor/lib/libstagefright_ozoencoder.so
+vendor/lib/libstagefright_soft_ozodec.so
+vendor/lib/libstagefright_soft_ozoenc.so
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
