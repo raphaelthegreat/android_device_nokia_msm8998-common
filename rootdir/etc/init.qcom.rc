@@ -550,6 +550,16 @@ service fstman /vendor/bin/fstman -B -ddd -c /data/vendor/wifi/fstman.ini -a 1
     disabled
     oneshot
 
+service vendor.cnss-daemon /vendor/bin/cnss-daemon -n -l
+    class late_start
+    user system
+    group system inet net_admin wifi
+    capabilities NET_ADMIN
+    writepid /dev/cpuset/system-background/tasks
+
+on property:sys.shutdown.requested=*
+    stop vendor.cnss-daemon
+
 # FST Manager with supplicant - connect to supplicant socket
 service fstman_wlan0 /vendor/bin/fstman -B -ddd -c /data/vendor/wifi/fstman.ini \
     -a 0 @android:vendor_wpa_wlan0
