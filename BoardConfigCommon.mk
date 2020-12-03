@@ -166,6 +166,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private

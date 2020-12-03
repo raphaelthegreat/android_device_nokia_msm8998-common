@@ -12,6 +12,7 @@ binder_use(hal_fingerprint_nb1)
 add_service(hal_fingerprint_nb1, hal_fingerprint_nb1_service);
 
 allow hal_fingerprint_nb1 vnd_hal_fingerprint_nb1_service:service_manager { find };
+allow hal_fingerprint_nb1 default_android_service:service_manager { find };
 allow hal_fingerprint_nb1 vnd_gx_fpd_service:service_manager { find };
 allow hal_fingerprint_nb1 fingerprint_service:service_manager { find };
 
