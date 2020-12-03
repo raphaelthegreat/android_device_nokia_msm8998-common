@@ -329,13 +329,6 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
-    Tag
-
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
