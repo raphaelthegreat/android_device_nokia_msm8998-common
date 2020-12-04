@@ -335,6 +335,23 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
+# NFC
+PRODUCT_PACKAGES += \
+    NQNfcNci \
+    SecureElement \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    nfc_nci.nqx.default \
+    libp61-jcop-kit \
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
+    Tag \
+    com.android.nfc_extras \
+    vendor.nxp.hardware.nfc@1.2-service \
+    nfc_nci.nqx.default.hw
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -452,7 +469,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    vendor/nxp/opensource/pn5xx
 
 # Telephony-ext
 PRODUCT_PACKAGES += \
