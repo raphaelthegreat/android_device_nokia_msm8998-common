@@ -11,6 +11,8 @@ type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
 # Radio
 type rild_file, file_type, vendor_file_type;
 type proc_bandinfo, proc_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
 
 # Rmt
 type debugfs_rmt, debugfs_type, fs_type;
