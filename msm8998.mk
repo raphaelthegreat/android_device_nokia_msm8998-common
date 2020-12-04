@@ -361,6 +361,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.atrace@1.0-service.pixel \
     android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
@@ -395,7 +396,6 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qti.fm.sh \
-    init.qcom.wifi.sh \
     init.qcom.sh \
     init.qcom.usb.sh
 
@@ -449,7 +449,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Telephony-ext
 PRODUCT_PACKAGES += \
