@@ -124,6 +124,9 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbcon
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 
+# NFC
+TARGET_USES_NQ_NFC := true
+
 # Partitions
 BOARD_USES_SYSTEM_OTHER_ODEX := true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
