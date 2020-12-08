@@ -154,6 +154,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
 
+# RIL
+TARGET_USES_OLD_MNC_FORMAT := true
+
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 BOARD_USES_QCOM_HARDWARE := true
