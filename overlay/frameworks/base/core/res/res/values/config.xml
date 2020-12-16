@@ -351,4 +351,18 @@
     <!-- Telephony qualified networks service package name to bind to by default. -->
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
+    <!-- Is the Battery LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveBatteryLed">false</bool>
+
+    <!-- Is the notification LED intrusive?
+    Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">false</bool>
+
+    <!-- Does the notification LED support multiple colors?
+    Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">false</bool>
+
+    <!-- Does the battery LED support multiple colors. Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">false</bool>
+
 </resources>
