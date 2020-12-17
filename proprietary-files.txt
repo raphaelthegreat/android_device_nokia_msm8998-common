@@ -103,6 +103,24 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/lib/libhdmipassthru.so
 vendor/lib64/libhdmipassthru.so
 
+# Audio (Hardware)
+vendor/lib/hw/audio.primary.default.so
+vendor/lib/hw/audio.primary.msm8998.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.usb.default.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libvolumelistener.so
+vendor/lib64/hw/audio.primary.default.so
+vendor/lib64/hw/audio.primary.msm8998.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.usb.default.so
+vendor/lib64/soundfx/libqcompostprocbundle.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libvolumelistener.so
+
 # Audio (Scripts)
 vendor/bin/dmic1_to_headset_recv_off.sh
 vendor/bin/dmic1_to_headset_recv_on.sh
@@ -577,12 +595,14 @@ vendor/lib64/libreffeature.so
 vendor/lib64/libskewknob.so
 
 # Nokia OZO
-vendor/lib64/libozoaudiodecoder.so
+vendor/lib/libstagefright_ozodecoder.so
+vendor/lib/libstagefright_ozoencoder.so
+vendnor/lib/libstagefright_soft_ozodec.so
+vendnor/lib/libstagefright_soft_ozoenc.so
+vendor/lib/libozoaudioencoder.so
+vendor/lib/libozoaudiodecoder.so
 vendor/lib64/libozoaudioencoder.so
-vendor/lib64/libstagefright_ozodecoder.so
-vendor/lib64/libstagefright_ozoencoder.so
-vendnor/lib64/libstagefright_soft_ozodec.so
-vendnor/lib64/libstagefright_soft_ozoenc.so
+vendor/lib64/libozoaudiodecoder.so
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
