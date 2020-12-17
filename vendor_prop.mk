@@ -108,6 +108,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.charger.enable_suspend=true
 
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.hardware.vulkan=adreno \
+	ro.hardware.egl=adreno \
+	debug.sf.enable_hwc_vds=1 \
+	ro.vendor.display.cabl=2
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true \
@@ -122,12 +129,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.hw.fm.init=0
-
-# Graphics
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hardware.vulkan=adreno \
-	ro.hardware.egl=adreno \
-	ro.vendor.display.cabl=2
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
