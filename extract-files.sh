@@ -82,9 +82,6 @@ function blob_fixup() {
     vendor/lib/hw/vulkan.msm8998.so)
         patchelf --set-soname "vulkan.msm8998.so" "${2}"
         ;;
-    vendor/lib64/lib-imsrcs-v2.so)
-        patchelf --add-needed "libbase_shim.so" "${2}"
-        ;;
     # Fix xml version
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
         sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
