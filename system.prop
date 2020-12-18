@@ -1,0 +1,27 @@
+# Radio
+persist.vendor.radio.lte_vrte_ltd=1
+persist.vendor.radio.voice_on_lte=1
+persist.vendor.data.iwlan.enable=true
+persist.ims.enableADBLogs=1
+persist.ims.enableDebugLogs=1
+persist.data.iwlan.enable=true
+persist.radio.flexmap_type=false
+ro.telephony.default_network=22
+
+# Graphics
+ro.surface_flinger.has_HDR_display=false
+ro.surface_flinger.has_wide_color_display=false
+ro.surface_flinger.use_color_management=false
+ro.surface_flinger.supports_background_blur=1
+
+# Misc
+persist.radio.oem_socket=true
+persist.env.fastdorm.enabled=true
+persist.data.tcp_rst_drop=true
+persist.sys.wifi_log_enable=false
+persist.sys.MNC=UNKNOW
+
+# NFC
+ro.boot.nfc=nxp
+ro.hardware.nfc_nci=nqx.default
+persist.nfc.support=true
