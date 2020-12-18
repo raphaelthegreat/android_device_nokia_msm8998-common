@@ -121,6 +121,29 @@ vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
 vendor/lib64/soundfx/libvolumelistener.so
 
+# Audio (hidls)
+vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
+vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
+vendor/lib/hw/android.hardware.audio.effect@5.0-impl.so
+vendor/lib/hw/android.hardware.audio@2.0-impl.so
+vendor/lib/hw/android.hardware.audio@4.0-impl.so
+vendor/lib/hw/android.hardware.audio@5.0-impl.so
+vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so
+vendor/lib/android.hardware.audio.common-util.so
+vendor/lib/android.hardware.audio.common@2.0-util.so
+vendor/lib/android.hardware.audio.common@4.0-util.so
+vendor/lib/android.hardware.audio.common@5.0-util.so
+vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
+vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
+vendor/lib64/hw/android.hardware.audio.effect@5.0-impl.so
+vendor/lib64/hw/android.hardware.audio@2.0-impl.so
+vendor/lib64/hw/android.hardware.audio@4.0-impl.so
+vendor/lib64/hw/android.hardware.audio@5.0-impl.so
+vendor/lib64/android.hardware.audio.common-util.so
+vendor/lib64/android.hardware.audio.common@2.0-util.so
+vendor/lib64/android.hardware.audio.common@4.0-util.so
+vendor/lib64/android.hardware.audio.common@5.0-util.so
+
 # Audio (Scripts)
 vendor/bin/dmic1_to_headset_recv_off.sh
 vendor/bin/dmic1_to_headset_recv_on.sh
@@ -597,8 +620,8 @@ vendor/lib64/libskewknob.so
 # Nokia OZO
 vendor/lib/libstagefright_ozodecoder.so
 vendor/lib/libstagefright_ozoencoder.so
-vendnor/lib/libstagefright_soft_ozodec.so
-vendnor/lib/libstagefright_soft_ozoenc.so
+vendor/lib/libstagefright_soft_ozodec.so
+vendor/lib/libstagefright_soft_ozoenc.so
 vendor/lib/libozoaudioencoder.so
 vendor/lib/libozoaudiodecoder.so
 vendor/lib64/libozoaudioencoder.so
