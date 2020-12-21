@@ -130,7 +130,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true \
 	ro.surface_flinger.has_wide_color_display=false \
-	ro.surface_flinger.use_color_management=false \
+	ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.supports_background_blur=true
 
 # Fingerprint
