@@ -363,7 +363,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.msm.usb.configfs.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.qcom.usb.rc \
