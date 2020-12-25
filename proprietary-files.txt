@@ -627,6 +627,9 @@ vendor/lib/libozoaudiodecoder.so
 vendor/lib64/libozoaudioencoder.so
 vendor/lib64/libozoaudiodecoder.so
 
+# Offline charger
+bin/charger:vendor/bin/charger
+
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/energy-awareness
