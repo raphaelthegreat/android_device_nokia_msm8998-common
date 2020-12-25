@@ -30,10 +30,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.vendor.radio.lte_vrte_ltd=true \
     persist.vendor.radio.voice_on_lte=true \
-    persist.vendor.data.iwlan.enable=true \
     persist.ims.enableADBLogs=true \
     persist.ims.enableDebugLogs=true \
-    persist.data.iwlan.enable=true \
     persist.radio.flexmap_type=false \
     ro.telephony.default_network=22
 
