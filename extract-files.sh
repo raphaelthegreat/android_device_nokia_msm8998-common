@@ -1,18 +1,9 @@
 #!/bin/bash
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# SPDX-License-Identifier: Apache-2.0
 #
 
 set -e
@@ -26,9 +17,9 @@ INITIAL_COPYRIGHT_YEAR=2019
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="${MY_DIR}/../../.."
+ANDROID_ROOT="${MY_DIR}/../../.."
 
-HELPER="${LINEAGE_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -55,25 +46,25 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    # Fix system_ext paths
-    system_ext/etc/init/dpmd.rc)
-        sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
-        ;;
-    system_ext/etc/permissions/dpmapi.xml | system_ext/etc/permissions/telephonyservice.xml | system_ext/etc/permissions/com.qti.dpmframework.xml | \
-    system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml | system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml | \
-    system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml)
-        sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
-        ;;
-    system_ext/etc/permissions/qcrilhook.xml)
-        sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
-        ;;
-    vendor/lib/hw/vulkan.msm8998.so|vendor/lib64/hw/vulkan.msm8998.so)
-        ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
-        ;;
-    # Shim libdpmframework
-    system_ext/lib64/libdpmframework.so)
-        ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
-        ;;
+        # Fix system_ext paths
+        system_ext/etc/init/dpmd.rc)
+            sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
+            ;;
+        system_ext/etc/permissions/dpmapi.xml | system_ext/etc/permissions/telephonyservice.xml | system_ext/etc/permissions/com.qti.dpmframework.xml | \
+        system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml | system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml | \
+        system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml)
+            sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
+            ;;
+        system_ext/etc/permissions/qcrilhook.xml)
+            sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
+            ;;
+        vendor/lib/hw/vulkan.msm8998.so|vendor/lib64/hw/vulkan.msm8998.so)
+            ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
+            ;;
+        # Shim libdpmframework
+        system_ext/lib64/libdpmframework.so)
+            ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
+            ;;
     esac
 }
 
