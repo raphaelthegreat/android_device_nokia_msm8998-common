@@ -125,7 +125,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true 
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
-BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.selinux=permissive
 
 # LLVM
 TARGET_USE_SDCLANG := true
@@ -177,7 +177,7 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # Sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
+#include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 

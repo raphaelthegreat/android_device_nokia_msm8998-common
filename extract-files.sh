@@ -35,7 +35,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/pa/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -67,7 +67,7 @@ fi
 function blob_fixup() {
     case "${1}" in
     product/lib64/libdpmframework.so)
-        "$PATCHELF" --add-needed "libcutils_shim.so" "${2}"
+        patchelf --add-needed "libcutils_shim.so" "${2}"
         ;;
     vendor/lib64/hw/gxfingerprint.default.so)
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
@@ -75,9 +75,9 @@ function blob_fixup() {
         ;;
     # Patch blobs for VNDK
     vendor/bin/gx_fpd)
-        "$PATCHELF" --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
-        "$PATCHELF" --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
-        "$PATCHELF" --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
+        patchelf --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
+        patchelf --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
+        patchelf --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
         ;;
     vendor/lib/hw/vulkan.msm8998.so)
         patchelf --set-soname "vulkan.msm8998.so" "${2}"
