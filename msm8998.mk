@@ -377,6 +377,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 -include $(COMMON_PATH)/vendor_prop.mk
+-include $(COMMON_PATH)/system_prop.mk
 
 # QTI
 PRODUCT_COPY_FILES += \
