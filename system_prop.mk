@@ -2,6 +2,23 @@
 # system prop for nokia msm8998
 #
 
+# ADB
+#PRODUCT_PRODUCT_PROPERTIES += \
+ro.adb.secure=1 \
+ro.secure=1 \
+ro.debuggable=0 \
+persist.service.adb.enable=1
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.hardware.vulkan=adreno \
+	ro.hardware.egl=adreno \
+	ro.opengles.version=196610 \
+	debug.sf.enable_gl_backpressure=1 \
+	debug.sf.enable_hwc_vds=1 \
+	vendor.display.disable_rotator_downscale=1 \
+	ro.vendor.display.cabl=2
+
 # Volte
 # Debug Options
 PRODUCT_PROPERTY_OVERRIDES += \
