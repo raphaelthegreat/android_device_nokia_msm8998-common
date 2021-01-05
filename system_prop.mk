@@ -3,11 +3,12 @@
 #
 
 # ADB
-#PRODUCT_PRODUCT_PROPERTIES += \
-ro.adb.secure=0 \
-ro.secure=1 \
-ro.debuggable=0 \
-persist.service.adb.enable=1
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.secure=1 \
+    ro.adb.secure=1 \
+    ro.debuggable=1 \
+    ro.allow.mock.location=1
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
