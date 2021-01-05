@@ -4,7 +4,7 @@
 
 # ADB
 #PRODUCT_PRODUCT_PROPERTIES += \
-ro.adb.secure=1 \
+ro.adb.secure=0 \
 ro.secure=1 \
 ro.debuggable=0 \
 persist.service.adb.enable=1
