@@ -1,0 +1,97 @@
+diff --git a/minui/graphics_fbdev.cpp b/minui/graphics_fbdev.cpp
+index 2584017..a79717e 100644
+--- a/minui/graphics_fbdev.cpp
++++ b/minui/graphics_fbdev.cpp
+@@ -28,8 +28,6 @@
+ 
+ #include <memory>
+ 
+-#include <android-base/unique_fd.h>
+-
+ #include "minui/minui.h"
+ 
+ std::unique_ptr<GRSurfaceFbdev> GRSurfaceFbdev::Create(size_t width, size_t height,
+@@ -56,7 +54,7 @@ void MinuiBackendFbdev::SetDisplayedFramebuffer(size_t n) {
+ }
+ 
+ GRSurface* MinuiBackendFbdev::Init() {
+-  android::base::unique_fd fd(open("/dev/graphics/fb0", O_RDWR | O_CLOEXEC));
++  int fd = open("/dev/graphics/fb0", O_RDWR);
+   if (fd == -1) {
+     perror("cannot open fb0");
+     return nullptr;
+@@ -65,11 +63,13 @@ GRSurface* MinuiBackendFbdev::Init() {
+   fb_fix_screeninfo fi;
+   if (ioctl(fd, FBIOGET_FSCREENINFO, &fi) < 0) {
+     perror("failed to get fb0 info");
++    close(fd);
+     return nullptr;
+   }
+ 
+   if (ioctl(fd, FBIOGET_VSCREENINFO, &vi) < 0) {
+     perror("failed to get fb0 info");
++    close(fd);
+     return nullptr;
+   }
+ 
+@@ -96,6 +96,7 @@ GRSurface* MinuiBackendFbdev::Init() {
+   void* bits = mmap(0, fi.smem_len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+   if (bits == MAP_FAILED) {
+     perror("failed to mmap framebuffer");
++    close(fd);
+     return nullptr;
+   }
+ 
+@@ -127,10 +128,10 @@ GRSurface* MinuiBackendFbdev::Init() {
+ 
+   gr_draw = gr_framebuffer[1].get();
+   memset(gr_draw->buffer_, 0, gr_draw->height * gr_draw->row_bytes);
+-  fb_fd = std::move(fd);
++  fb_fd = fd;
+   SetDisplayedFramebuffer(0);
+ 
+-  printf("framebuffer: %d (%zu x %zu)\n", fb_fd.get(), gr_draw->width, gr_draw->height);
++  printf("framebuffer: %d (%zu x %zu)\n", fb_fd, gr_draw->width, gr_draw->height);
+ 
+   Blank(true);
+   Blank(false);
+@@ -150,3 +151,9 @@ GRSurface* MinuiBackendFbdev::Flip() {
+   }
+   return gr_draw;
+ }
++
++MinuiBackendFbdev::~MinuiBackendFbdev() {	
++  if (fb_fd != -1) {	
++    close(fb_fd);	
++  }	
++}
+\ No newline at end of file
+diff --git a/minui/graphics_fbdev.h b/minui/graphics_fbdev.h
+index 596ba74..585fb44 100644
+--- a/minui/graphics_fbdev.h
++++ b/minui/graphics_fbdev.h
+@@ -23,8 +23,6 @@
+ #include <memory>
+ #include <vector>
+ 
+-#include <android-base/unique_fd.h>
+-
+ #include "graphics.h"
+ #include "minui/minui.h"
+ 
+@@ -51,7 +49,7 @@ class GRSurfaceFbdev : public GRSurface {
+ class MinuiBackendFbdev : public MinuiBackend {
+  public:
+   MinuiBackendFbdev() = default;
+-  ~MinuiBackendFbdev() override = default;
++  ~MinuiBackendFbdev() override;
+ 
+   GRSurface* Init() override;
+   GRSurface* Flip() override;
+@@ -67,5 +65,5 @@ class MinuiBackendFbdev : public MinuiBackend {
+   std::vector<uint8_t> memory_buffer;
+   size_t displayed_buffer{ 0 };
+   fb_var_screeninfo vi;
+-  android::base::unique_fd fb_fd;
++  int fb_fd{ -1 };
+ };

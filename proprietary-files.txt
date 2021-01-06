@@ -649,6 +649,10 @@ vendor/lib64/libozoaudioencoder.so
 vendor/lib/vendor.qti.power.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 
+# Offline charger
+bin/charger:vendor/bin/charger
+
+
 # Perf
 etc/perf/wlc_model.tflite
 lib/libqti-perfd-client_system.so
