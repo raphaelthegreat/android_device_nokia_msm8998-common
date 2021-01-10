@@ -303,20 +303,13 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    NQNfcNci \
+    android.hardware.nfc@1.2-service \
+    com.android.nfc_extras \
     SecureElement \
-    libnqnfc-nci \
-    libnqnfc_nci_jni \
-    nfc_nci.nqx.default \
-    libp61-jcop-kit \
-    com.nxp.nfc.nq \
-    com.nxp.nfc.nq.xml \
+    NfcNci \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
-    Tag \
-    com.android.nfc_extras \
-    vendor.nxp.hardware.nfc@1.2-service \
-    nfc_nci.nqx.default.hw
+    Tag
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -425,8 +418,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
-    vendor/nxp/opensource/pn5xx
+    $(COMMON_PATH)
 
 # Telephony-ext
 PRODUCT_PACKAGES += \
