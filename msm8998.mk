@@ -178,10 +178,14 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8998 \
     memtrack.msm8998 \
     libdisplayconfig \
+    libdisplayconfig.qti \
     libqdMetaData \
-    libqdMetaData.system \
     libtinyxml \
     libvulkan
+
+PRODUCT_PACKAGES += \
+    vendor.display.config@2.0.vendor \
+    vendor.display.config@2.0 \
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
