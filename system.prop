@@ -43,6 +43,9 @@ ro.com.widevine.cachesize=16777216
 # Factory reset partition
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# GBoard
+ro.com.google.ime.kb_pad_port_b=1
+
 # Graphics
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
