@@ -404,6 +404,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0 \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
+    android.frameworks.sensorservice@1.0 \
     libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
