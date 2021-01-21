@@ -544,5 +544,15 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
 
+# Included prebuild Apps
+#PRODUCT_PACKAGES += vlc \
+#PRODUCT_PACKAGES += aptoide \
+#PRODUCT_PACKAGES += telegram-x \
+#PRODUCT_PACKAGES += whatsapp \
+#PRODUCT_PACKAGES += total-commander \
+#PRODUCT_PACKAGES += facebook \
+#PRODUCT_PACKAGES += messenger \
+#PRODUCT_PACKAGES += total-commander-ftp
+
 PRODUCT_BOOT_JARS += \
     WfdCommon
