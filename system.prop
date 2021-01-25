@@ -50,6 +50,13 @@ vendor.display.disable_skip_validate=1
 vendor.display.perf_hint_window=50
 vendor.display.enable_default_color_mode=1
 
+# DRM
+drm.service.enabled=true
+ro.com.widevine.cachesize=16777216
+
+# Factory reset partition
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
 # HWUI
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
@@ -115,6 +122,7 @@ ro.telephony.default_network=22,20
 persist.radio.oem_socket=true
 persist.data.tcp_rst_drop=true
 persist.radio.flexmap_type=false
+ro.telephony.call_ring.multiple=false
 
 # Sensors
 ro.vendor.sensors.dev_ori=true
@@ -132,3 +140,6 @@ persist.vendor.delta_time.enable=true
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
 persist.hwc.enable_vds=1
+
+# Wi-Fi
+wifi.interface=wlan0

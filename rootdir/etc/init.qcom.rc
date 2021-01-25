@@ -146,10 +146,6 @@ on boot
     #Create WIGIG socket area
     mkdir /dev/socket/wigig 0770 wifi wifi
 
-    setprop wifi.interface wlan0
-
-    setprop ro.telephony.call_ring.multiple false
-
     #enable camera read sensors data
     setprop persist.vendor.camera.gyro.disable 0
 
