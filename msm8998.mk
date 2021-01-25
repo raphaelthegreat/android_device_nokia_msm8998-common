@@ -154,7 +154,10 @@ PRODUCT_PACKAGES += \
     btconfig \
     bt-mac-generator \
     libbt-vendor \
-    libbthost_if \
+    libbthost_if
+
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Camera
