@@ -47,5 +47,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.telephony.default_network=10
 
 #OTA
-PRODUCT_PROPERTY_OVERRIDES += \
-rr.updater.uri=https://raw.githubusercontent.com/Niemandausduisburg/NB1-OTA-Test/20210126/NB1.json
+#PRODUCT_PROPERTY_OVERRIDES += \
+#rr.updater.uri=https://raw.githubusercontent.com/Niemandausduisburg/NB1-OTA-Test/20210126/NB1.json
