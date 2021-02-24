@@ -66,7 +66,6 @@ ro.hwui.text_large_cache_height=4096
 # IMS
 persist.ims.enableADBLogs=1
 persist.ims.enableDebugLogs=1
-persist.data.iwlan.enable=true
 persist.vendor.radio.lte_vrte_ltd=1
 persist.vendor.radio.voice_on_lte=1
 persist.dbg.ims_volte_enable=1
