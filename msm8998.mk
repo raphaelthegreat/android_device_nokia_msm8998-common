@@ -356,7 +356,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.nokia_msm8998 \
+    android.hardware.power-service.nokia_msm8998 \
     vendor.qti.hardware.perf@2.0.vendor \
     android.hardware.power.stats@1.0-service.pixel
 
