@@ -458,7 +458,11 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/wdsp0/boot
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
-    start qcom-post-boot
+    # Let kernel know our image version/variant/crm_version
+    write /sys/devices/soc0/select_image 10
+    write /sys/devices/soc0/image_version "10:${ro.build.id}:${ro.build.version.incremental}"
+    write /sys/devices/soc0/image_variant "${ro.product.name}-${ro.build.type}"
+    write /sys/devices/soc0/image_crm_version "${ro.build.version.codename}"
 
     # Starting perf properly
     setprop vendor.post_boot.parsed 1
@@ -687,13 +691,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     group root system radio oem_2903 oem_2904 vendor_rfs
-    oneshot
-
-service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
-    class late_start
-    user root
-    group root system wakelock graphics
-    disabled
     oneshot
 
 service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh

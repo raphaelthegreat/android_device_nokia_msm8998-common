@@ -31,6 +31,9 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
 
 on init
+    # disable thermal hotplug for configuration
+    write /sys/module/msm_thermal/core_control/enabled 0
+
     # bring CPUs online
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
@@ -43,13 +46,63 @@ on init
 
     # configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 518400
 
     # configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "schedutil"
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 500
-    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 20000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us 1000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 806400
+
+    # re-enable thermal and BCL hotplug
+    write /sys/module/msm_thermal/core_control/enabled 1
+    
+    # Enable input boost configuration
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 40
+
+    # Enable bus-dcvs
+    write /sys/class/devfreq/soc:qcom,cpubw/governor "bw_hwmon"
+    write /sys/class/devfreq/soc:qcom,cpubw/polling_interval 50
+    write /sys/class/devfreq/soc:qcom,cpubw/min_freq 1525
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/mbps_zones "3143 5859 11863 13763"
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/sample_ms 4
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/io_percent 34
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory 20
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_length 10
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/low_power_ceil_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/low_power_io_percent 34
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/low_power_delay 20
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/guard_band_mbps 0
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/up_scale 250
+    write /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/idle_mbps 1600
+
+    # Configure memory latencies
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,memlat-cpu0/mem_latency/ratio_ceil 400
+
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/governor "mem_latency"
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/polling_interval 10
+    write /sys/class/devfreq/soc:qcom,memlat-cpu4/mem_latency/ratio_ceil 400
+
+    write /sys/class/devfreq/soc:qcom,mincpubw/governor "cpufreq"
+
+    # Setup power retention
+    write /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/pwr/cpu1/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/pwr/cpu2/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/pwr/cpu3/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/cpu4/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/cpu5/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/cpu6/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/cpu7/ret/idle_enabled N
+    write /sys/module/lpm_levels/system/pwr/pwr-l2-dynret/idle_enabled N
+    write /sys/module/lpm_levels/system/pwr/pwr-l2-ret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/perf-l2-dynret/idle_enabled N
+    write /sys/module/lpm_levels/system/perf/perf-l2-ret/idle_enabled N
 
     # Set boottime stune value
     write /dev/stune/schedtune.prefer_idle 1
@@ -226,7 +279,6 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/swappiness 100
 
 on charger
-    start qcom-post-boot
     start vendor.hvdcp_opti
     setprop persist.sys.usb.config mass_storage
     setprop sys.usb.configfs 1
