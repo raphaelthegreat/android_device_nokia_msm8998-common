@@ -59,6 +59,11 @@ on init
     # re-enable thermal and BCL hotplug
     write /sys/module/msm_thermal/core_control/enabled 1
     
+    # Setup dynamic stune boost
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost 15
+    write /sys/module/cpu_boost/parameters/dynamic_stune_boost_ms 1000
+    write /dev/stune/top-app/schedtune.sched_boost 15
+
     # Enable input boost configuration
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800"
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
