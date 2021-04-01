@@ -274,6 +274,9 @@
     <!-- Flag specifying whether VoLTE is available on device -->
     <bool name="config_device_vt_available">true</bool>
 
+    <!-- Vowifi -->
+    <bool name="config_hasVowifi">true</bool>
+
     <!-- Flag specifying whether WFC over IMS is availasble on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
