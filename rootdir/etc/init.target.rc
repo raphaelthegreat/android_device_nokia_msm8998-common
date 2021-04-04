@@ -152,8 +152,11 @@ on property:sys.shutdown.requested=*
     stop vendor.per_proxy
 
 on charger
+    start qcom-post-boot
     start vendor.hvdcp_opti
+    setprop persist.sys.usb.config mass_storage
     setprop sys.usb.configfs 1
+    start vendor.power_off_alarm
 
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
