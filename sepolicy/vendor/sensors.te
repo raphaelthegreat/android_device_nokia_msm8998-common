@@ -1,0 +1,1 @@
+allow sensors proc_fih:file { getattr read };

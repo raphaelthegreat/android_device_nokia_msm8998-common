@@ -11,6 +11,9 @@ type gx_fpd_data_file, file_type, data_file_type, core_data_file_type;
 # Radio
 type rild_file, file_type, vendor_file_type;
 type proc_bandinfo, proc_type, fs_type;
+type debugfs_power_stats, debugfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
 
 # Rmt
 type debugfs_rmt, debugfs_type, fs_type;
@@ -23,3 +26,7 @@ type proc_fih, fs_type, proc_type;
 
 # Kcal
 type sysfs_kcal, fs_type, sysfs_type;
+
+# Sysfs
+type sysfs_msm_subsys, fs_type, sysfs_type;
+type sysfs_usb_device, sysfs_type, fs_type;

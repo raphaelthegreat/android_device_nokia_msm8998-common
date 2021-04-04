@@ -106,10 +106,19 @@ persist.camera.ffcolor=ffebb4
 persist.vendor.camera.fdvideo=1
 persist.camera.fdvideo=1
 
+# Media
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+
 # Misc
 vendor.voice.path.for.pcm.voip=false
 ro.vendor.qti.sys.fw.bg_apps_limit=20
-ro.vendor.qti.config.zram=true
 persist.vendor.qcomsysd.enabled=1
 persist.backup.ntpServer=0.pool.ntp.org
 sys.vendor.shutdown.waittime=500
@@ -142,9 +151,9 @@ persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.rat_on=combine
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ro.control_privapp_permissions=enforce
-vendor.rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 persist.vendor.qcom.bluetooth.enable.splita2dp=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 ro.telephony.iwlan_operation_mode=legacy
