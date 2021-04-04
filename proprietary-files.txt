@@ -104,7 +104,7 @@ vendor/etc/acdbdata/A1N/Handset_cal.acdb
 vendor/etc/acdbdata/A1N/Hdmi_cal.acdb
 vendor/etc/acdbdata/A1N/Headset_cal.acdb
 vendor/etc/acdbdata/A1N/Speaker_cal.acdb
-vendor/etc/acdbdata/A1N/workspaceFile.qwsp
+vendor/etc/acdbdata/A1N/workspaceFile_cal.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Audio (Extensions)

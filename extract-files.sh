@@ -22,29 +22,18 @@ VENDOR=nokia
 
 INITIAL_COPYRIGHT_YEAR=2019
 
-# Check host-OS before doing anything
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    PLATFORM='linux-x86'
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    PLATFORM='darwin-x86'
-fi
-
-# Load extractutils and do some sanity checks
+# Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="${MY_DIR}/../../.."
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+HELPER="${LINEAGE_ROOT}/tools/extract-utils/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
-. "$HELPER"
-
-# Use prebuilts from tools-lineage
-TOOLS_LINEAGE="$LINEAGE_ROOT"/prebuilts/tools-lineage/"$PLATFORM"/bin
-PATCHELF="$TOOLS_LINEAGE"/patchelf
+source "${HELPER}"
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
@@ -67,7 +56,7 @@ fi
 function blob_fixup() {
     case "${1}" in
     product/lib64/libdpmframework.so)
-        "$PATCHELF" --add-needed "libcutils_shim.so" "${2}"
+        ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
         ;;
     vendor/lib64/hw/gxfingerprint.default.so)
         # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
@@ -75,13 +64,19 @@ function blob_fixup() {
         ;;
     # Patch blobs for VNDK
     vendor/bin/gx_fpd)
-        "$PATCHELF" --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
-        "$PATCHELF" --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
-        "$PATCHELF" --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
+        ${PATCHELF} --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
+        ${PATCHELF} --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
+        ${PATCHELF} --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
+        ;;
+    vendor/lib/hw/vulkan.msm8998.so)
+        ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
         ;;
     # Fix xml version
     product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
         sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
+        ;;
+    vendor/lib64/hw/vulkan.msm8998.so)
+        ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
         ;;
     esac
 }
