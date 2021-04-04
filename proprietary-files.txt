@@ -97,6 +97,14 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
 # Audio (ACDB)
+vendor/etc/acdbdata/A1N/Bluetooth_cal.acdb
+vendor/etc/acdbdata/A1N/General_cal.acdb
+vendor/etc/acdbdata/A1N/Global_cal.acdb
+vendor/etc/acdbdata/A1N/Handset_cal.acdb
+vendor/etc/acdbdata/A1N/Hdmi_cal.acdb
+vendor/etc/acdbdata/A1N/Headset_cal.acdb
+vendor/etc/acdbdata/A1N/Speaker_cal.acdb
+vendor/etc/acdbdata/A1N/workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Audio (Extensions)
