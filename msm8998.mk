@@ -79,6 +79,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     otapreopt_script \
 
+# Adapt Launch 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
