@@ -18,3 +18,4 @@ type proc_fih, fs_type, proc_type;
 
 # Sysfs
 type sysfs_msm_subsys, fs_type, sysfs_type;
+type sysfs_iio, sysfs_type, fs_type;
