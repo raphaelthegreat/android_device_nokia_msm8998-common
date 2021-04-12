@@ -723,9 +723,6 @@ service wifi_ftmd /vendor/bin/wifi_ftmd
     disabled
     oneshot
 
-on property:vendor.wifi.ftmd.load=true
-    insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
-
 service cnss-daemon /vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -760,10 +757,6 @@ service loc_launcher /vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
-
-on property:crypto.driver.load=1
-     insmod /system/lib/modules/qce.ko
-     insmod /system/lib/modules/qcedev.ko
 
 service drmdiag /vendor/bin/drmdiagapp
     class late_start
