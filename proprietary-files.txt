@@ -315,12 +315,6 @@ vendor/lib64/hw/gatekeeper.msm8998.so
 # GPS
 lib64/libxt_native.so
 lib/libxt_native.so
-product/lib64/vendor.qti.gnss@1.0.so
-product/lib64/vendor.qti.gnss@1.1.so
-product/lib64/vendor.qti.gnss@1.2.so
-product/lib64/vendor.qti.gnss@2.0.so
-product/lib64/vendor.qti.gnss@2.1.so
-product/lib64/vendor.qti.gnss@3.0.so
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/mlid
@@ -355,6 +349,8 @@ vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
+vendor/lib64/vendor.qti.gnss@3.0.so
+vendor/lib64/vendor.qti.gnss@3.0-service.so
 
 # Graphics - Adreno
 # From lavender-user 10 QKQ1.190910.002 V12.0.2.0.QFGEUXM release-keys
