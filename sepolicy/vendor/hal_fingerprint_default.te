@@ -17,12 +17,6 @@ typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
 # Allow storing fingerprint data
 allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
 allow hal_fingerprint_default fingerprintd_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default fpc_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default fpc_data_file:sock_file create_file_perms;
-
-# Allow read and write to fpc_sysfs
-allow hal_fingerprint_default fpc_sysfs:file rw_file_perms;
-allow hal_fingerprint_default fpc_sysfs:dir r_dir_perms;
 
 # Allow access to uhid device
 allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;
