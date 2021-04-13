@@ -9,7 +9,7 @@ binder_call(hal_fingerprint_default, keystore)
 hwbinder_use(hal_fingerprint_default)
 
 # Add services
-allow hal_fingerprint_default gx_fpd_service:service_manager find;
+allow hal_fingerprint_default vnd_gx_fpd_service:service_manager find;
 allow hal_fingerprint_default fingerprint_service:service_manager find;
 
 typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;

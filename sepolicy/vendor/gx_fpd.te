@@ -9,7 +9,7 @@ vndbinder_use(gx_fpd)
 binder_call(gx_fpd, hal_fingerprint_default)
 
 # Add services
-add_service(gx_fpd, gx_fpd_service)
+add_service(gx_fpd, vnd_gx_fpd_service)
 
 typeattribute gx_fpd data_between_core_and_vendor_violators;
 
