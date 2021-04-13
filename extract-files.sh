@@ -61,7 +61,8 @@ function blob_fixup() {
     system_ext/etc/init/dpmd.rc)
         sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
         ;;
-    system_ext/etc/permissions/dpmapi.xml | system_ext/etc/permissions/telephonyservice.xml | system_ext/etc/permissions/com.qti.dpmframework.xml)
+    system_ext/etc/permissions/dpmapi.xml | system_ext/etc/permissions/telephonyservice.xml | system_ext/etc/permissions/com.qti.dpmframework.xml | \
+    com.qualcomm.qti.imscmservice-V2.0-java.xml | com.qualcomm.qti.imscmservice-V2.1-java.xml | com.qualcomm.qti.imscmservice-V2.2-java.xml)
         sed -i "s|/system/product/framework/|/system/system_ext/framework/|g" "${2}"
         ;;
     system_ext/etc/permissions/qcrilhook.xml)
