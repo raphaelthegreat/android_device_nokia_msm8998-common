@@ -1,2 +1,0 @@
-# vibrator
-allow system_server sysfs_vibrator:file read;

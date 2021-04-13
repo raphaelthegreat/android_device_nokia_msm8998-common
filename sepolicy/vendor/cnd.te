@@ -1,4 +1,0 @@
-allow cnd self:capability { chown fsetid net_raw };
-
-set_prop(cnd, debug_prop)
-get_prop(cnd, wifi_prop)

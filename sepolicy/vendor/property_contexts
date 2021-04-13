@@ -57,5 +57,3 @@ camera.lens.aux.macro			    u:object_r:camera_prop:s0
 camera.lens.aux.infinite			u:object_r:camera_prop:s0
 camera.lens.front.macro			    u:object_r:camera_prop:s0
 camera.lens.front.infinite			u:object_r:camera_prop:s0
-
-vendor.powerhal.                    u:object_r:vendor_power_prop:s0
