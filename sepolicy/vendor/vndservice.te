@@ -1,3 +1,1 @@
 type vnd_gx_fpd_service,                vndservice_manager_type;
-type vnd_hal_fingerprint_nb1_service,   vndservice_manager_type;
-type power_stats_service,               vndservice_manager_type;
