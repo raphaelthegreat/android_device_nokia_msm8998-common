@@ -1,4 +1,5 @@
 allow init socket_device:sock_file { unlink setattr create };
 
 # LEDs
+allow init sysfs_leds:lnk_file read;
 allow init sysfs_leds:file r_file_perms;
