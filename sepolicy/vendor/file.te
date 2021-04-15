@@ -13,8 +13,5 @@ type debugfs_wlan, debugfs_type, fs_type;
 # Rmt
 type debugfs_rmt, debugfs_type, fs_type;
 
-# Persist
-type persist_display_file, file_type;
-
 # Touchscreen
 type proc_fih, fs_type, proc_type;
