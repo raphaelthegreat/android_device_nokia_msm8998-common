@@ -95,17 +95,6 @@ vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Audio (Scripts)
-vendor/bin/dmic1_to_headset_recv_off.sh
-vendor/bin/dmic1_to_headset_recv_on.sh
-vendor/bin/dmic2_to_headset_recv_off.sh
-vendor/bin/dmic2_to_headset_recv_on.sh
-vendor/bin/dmic3_to_headset_recv_off.sh
-vendor/bin/dmic3_to_headset_recv_on.sh
-vendor/bin/fqcaudioloopback_run.sh
-vendor/bin/headset_mic_to_headset_recv_off.sh
-vendor/bin/headset_mic_to_headset_recv_on.sh
-
 # Bluetooth (aptX) - from crosshatch-user 11 RQ2A.210305.006 7119741 release-keys
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
