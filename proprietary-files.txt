@@ -372,7 +372,7 @@ vendor/lib/librs_adreno_sha1.so|0a4ba1eb8c673a0869c3eb8546824f9bfc85bc2b
 vendor/lib/librs_adreno.so|532f2cbf31ba9a703e14cacc3d84792583b645e0
 vendor/lib/libRSDriver_adreno.so|f0cd0cd3b662ef26965eaa952dcc858555c2fbeb
 
-# Graphics - SDM
+# Graphics (SDM)
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/etc/init/vendor.display.color@1.0-service.rc
@@ -399,6 +399,38 @@ vendor/lib/vendor.display.color@1.1.so
 vendor/lib/vendor.display.color@1.2.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+
+# Graphics (Firmware)
+vendor/firmware/a225_pfp.fw
+vendor/firmware/a225_pm4.fw
+vendor/firmware/a225p5_pm4.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/a330_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a530_zap.b00
+vendor/firmware/a530_zap.b01
+vendor/firmware/a530_zap.b02
+vendor/firmware/a530_zap.elf
+vendor/firmware/a530_zap.mdt
+vendor/firmware/a540_gpmu.fw2
+vendor/firmware/a540_zap.b00
+vendor/firmware/a540_zap.b01
+vendor/firmware/a540_zap.b02
+vendor/firmware/a540_zap.elf
+vendor/firmware/a540_zap.mdt
+vendor/firmware/a630_gmu.bin
+vendor/firmware/a630_sqe.fw
 
 # Keymaster (QTI)
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
