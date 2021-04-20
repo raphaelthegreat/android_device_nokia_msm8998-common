@@ -1,5 +1,8 @@
 allow init socket_device:sock_file { unlink setattr create };
 
+# This should not exist, but it does...
+allow init sysfs:file setattr;
+
 # LEDs
 allow init sysfs_leds:lnk_file read;
 allow init sysfs_leds:file r_file_perms;
