@@ -538,21 +538,6 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
-# Misc
-vendor/etc/ozo_config.xml
-vendor/etc/init/dataadpl.rc
-vendor/etc/init/dataqti.rc
-vendor/etc/init/init-qcril-data.rc
-vendor/lib/libssrec.so
-vendor/lib/libtinyxml2_1.so
-vendor/lib/libdiagjni.so
-vendor/lib/libvpx.so
-vendor/lib64/libappclassifier.so
-vendor/lib64/libdiagjni.so
-vendor/lib64/libgameoptfeature.so
-vendor/lib64/libreffeature.so
-vendor/lib64/libskewknob.so
-
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/bin/energy-awareness
