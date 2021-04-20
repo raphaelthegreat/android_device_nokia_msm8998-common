@@ -422,24 +422,6 @@ vendor/lib/vendor.display.color@1.2.so
 vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# HBTP
-vendor/lib/libhbtpclient.so
-vendor/lib/libhbtpdsp.so
-vendor/lib/libhbtpfrmwk.so
-vendor/lib64/libhbtpclient.so
-vendor/lib64/libhbtpdsp.so
-vendor/lib64/libhbtpfrmwk.so
-
-# HDCP
-vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libhdcp1prov.so
-vendor/lib/libhdcp2p2prov.so
-vendor/lib/libhdcpsrm.so
-vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libhdcp1prov.so
-vendor/lib64/libhdcp2p2prov.so
-vendor/lib64/libhdcpsrm.so
-
 # Keymaster (QTI)
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
@@ -869,4 +851,6 @@ vendor/lib/libwfdhaldsmanager.so
 vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib/libmm-hdcpmgr.so
 vendor/lib64/libwfdhdcpcp.so
+vendor/lib64/libmm-hdcpmgr.so
