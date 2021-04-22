@@ -188,6 +188,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libdisplayconfig.qti \
     libqdMetaData \
+    libqdMetaData.system \
     libtinyxml \
     libvulkan
 
@@ -232,10 +233,11 @@ PRODUCT_PACKAGES += \
     libgeofencing \
     libgnss \
     libgnsspps \
-    libsynergy_loc_api
+    libsynergy_loc_api \
+    libwifi-hal-ctrl
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gnss_antenna_info.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss_antenna_info.conf \
+    $(COMMON_PATH)/configs/gps/gnss_antenna_info.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss_antenna_info.conf \
     $(COMMON_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(COMMON_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
     $(COMMON_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
@@ -309,13 +311,20 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service \
-    com.android.nfc_extras \
+    NQNfcNci \
     SecureElement \
-    NfcNci \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    nfc_nci.nqx.default \
+    libp61-jcop-kit \
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
     nqnfcee_access.xml \
     nqnfcse_access.xml \
-    Tag
+    Tag \
+    com.android.nfc_extras \
+    vendor.nxp.hardware.nfc@2.0-service \
+    nfc_nci.nqx.default.hw
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -420,7 +429,8 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH)
+    $(COMMON_PATH) \
+    vendor/nxp/opensource/pn5xx
 
 # Telephony-ext
 PRODUCT_PACKAGES += \
