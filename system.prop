@@ -36,6 +36,14 @@ persist.vendor.data.mode=concurrent
 bt.max.hfpclient.connections=1
 ro.qualcomm.cabl=2
 
+# Debug
+debug.sf.enable_hwc_vds=1
+debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+debug.gralloc.enable_fb_ubwc=1
+sdm.debug.disable_skip_validate=1
+sdm.perf_hint_window=50
+
 # Display
 vendor.gralloc.enable_fb_ubwc=1
 vendor.display.disable_skip_validate=1
