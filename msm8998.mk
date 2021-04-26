@@ -498,12 +498,6 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libvndfwk_detect_jni.qti.vendor
 
-# VR
-PRODUCT_PACKAGES += \
-    android.hardware.vr@1.0-impl \
-    android.hardware.vr@1.0-service \
-    vr.msm8998
-
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
