@@ -1,6 +1,6 @@
 [
   {
-    "repository": "GPUCode/umbrella",
-    "target_path": "kernel/nokia/umbrella"
+    "repository": "GPUCode/android_kernel_nokia_msm8998.git",
+    "target_path": "kernel/nokia/msm8998"
   }
 ]
