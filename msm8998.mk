@@ -112,7 +112,8 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libtinycompress \
     libtinycompress.vendor \
-    libvolumelistener
+    libvolumelistener \
+    libldacBT_bco
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
