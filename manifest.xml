@@ -496,8 +496,10 @@
         <interface>
             <name>IDataConnection</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
         <fqname>@1.1::IDataConnection/slot1</fqname>
+        <fqname>@1.1::IDataConnection/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.data.latency</name>
@@ -571,8 +573,10 @@
         <interface>
             <name>IQcRilAudio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
         <fqname>@1.0::IQcRilAudio/slot1</fqname>
+        <fqname>@1.0::IQcRilAudio/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
@@ -617,8 +621,10 @@
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
+            <instance>slot2</instance>
         </interface>
         <fqname>@1.0::IQtiRadio/slot1</fqname>
+        <fqname>@1.0::IQtiRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.uim</name>
