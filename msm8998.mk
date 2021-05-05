@@ -186,10 +186,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8998 \
     libdisplayconfig \
     libdisplayconfig.qti \
-    libqdMetaData \
-    libqdMetaData.system \
-    libtinyxml \
-    libvulkan
+    libqdMetaData.system
 
 PRODUCT_PACKAGES += \
     vendor.display.config@2.0.vendor \
@@ -461,12 +458,7 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # VNDK
-# Update this list with what each blob is actually for
-# libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
-# libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
-    libicuuc.vendor \
-    libstdc++.vendor \
     libgui_vendor \
     libvndfwk_detect_jni.qti.vendor
 
