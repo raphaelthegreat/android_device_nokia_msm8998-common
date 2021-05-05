@@ -1,6 +1,0 @@
-allow vndservicemanager gx_fpd:dir { search };
-allow vndservicemanager gx_fpd:file { read open };
-allow vndservicemanager gx_fpd:process { getattr };
-allow vndservicemanager hal_power_stats_default:file { r_file_perms };
-allow vndservicemanager hal_power_stats_default:dir { search };
-allow vndservicemanager hal_power_stats_default:process { getattr };
