@@ -89,6 +89,9 @@ function blob_fixup() {
     vendor/lib64/hw/vulkan.msm8998.so)
         ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
         ;;
+    vendor/lib/hw/camera.msm8998.so)
+        ${PATCHELF} --replace-needed "libgui.so" "libgui_vendor.so" "${2}"
+        ;;
     esac
 }
 
