@@ -55,9 +55,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    system_ext/lib64/libdpmframework.so)
-        ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
-        ;;
+    # Fix system_ext paths
     system_ext/etc/init/dpmd.rc)
         sed -i "s|/system/product/bin/|/system/system_ext/bin/|g" "${2}"
         ;;
@@ -69,28 +67,25 @@ function blob_fixup() {
     system_ext/etc/permissions/qcrilhook.xml)
         sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
         ;;
-    vendor/lib64/hw/gxfingerprint.default.so)
-        # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
-        sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
-        ;;
     # Patch blobs for VNDK
     vendor/bin/gx_fpd)
         ${PATCHELF} --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
         ${PATCHELF} --replace-needed "libbacktrace.so" "libbacktrace-vendor.so" "${2}"
         ${PATCHELF} --add-needed "liblog.so" "${2}" # Fix __android_log_print might replace it with fakelog in the future
         ;;
-    vendor/lib/hw/vulkan.msm8998.so)
-        ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
+    vendor/lib64/hw/gxfingerprint.default.so)
+        # Hexedit gxfingerprint to load goodix firmware from /vendor/firmware/
+        sed -i -e 's|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g' "${2}"
         ;;
-    # Fix xml version
-    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml|product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-        ;;
-    vendor/lib64/hw/vulkan.msm8998.so)
+    vendor/lib/hw/vulkan.msm8998.so|vendor/lib64/hw/vulkan.msm8998.so)
         ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
         ;;
     vendor/lib/hw/camera.msm8998.so)
         ${PATCHELF} --replace-needed "libgui.so" "libgui_vendor.so" "${2}"
+        ;;
+    # Shim libdpmframework
+    system_ext/lib64/libdpmframework.so)
+        ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
         ;;
     esac
 }
