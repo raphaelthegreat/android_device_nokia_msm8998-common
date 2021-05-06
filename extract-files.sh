@@ -17,9 +17,9 @@ INITIAL_COPYRIGHT_YEAR=2019
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-ANDROID_ROOT="${MY_DIR}/../../.."
+LINEAGE_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${LINEAGE_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -59,11 +59,11 @@ function blob_fixup() {
             sed -i 's|/product/framework/qcrilhook.jar|/system/system_ext/framework/qcrilhook.jar|g' "${2}"
             ;;
         vendor/lib/hw/vulkan.msm8998.so|vendor/lib64/hw/vulkan.msm8998.so)
-            ${PATCHELF} --set-soname "vulkan.msm8998.so" "${2}"
+            "${PATCHELF}" --set-soname "vulkan.msm8998.so" "${2}"
             ;;
         # Shim libdpmframework
         system_ext/lib64/libdpmframework.so)
-            ${PATCHELF} --add-needed "libcutils_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
             ;;
     esac
 }
