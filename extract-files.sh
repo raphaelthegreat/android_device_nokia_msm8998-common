@@ -88,13 +88,13 @@ function blob_fixup() {
 }
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT"
+setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC1" "$SECTION"
+extract "${MY_DIR}"/proprietary-files.txt "${SRC1}" "${SECTION}"
 
 # Initialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false $CLEAN_VENDOR
+setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false ${CLEAN_VENDOR}
 
-extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC2" "$SECTION"
+extract "${MY_DIR}"/../${DEVICE}/proprietary-files.txt "${SRC2}" "${SECTION}"
 
-"$MY_DIR"/setup-makefiles.sh
+"${MY_DIR}"/setup-makefiles.sh

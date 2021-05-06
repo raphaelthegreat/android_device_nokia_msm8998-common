@@ -10,7 +10,7 @@ set -e
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 LINEAGE_ROOT="${MY_DIR}/../../.."
 
@@ -19,7 +19,7 @@ if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
-. "$HELPER"
+source "${HELPER}"
 
 # Initialize the helper for common
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true
@@ -28,7 +28,7 @@ setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true
 write_headers "NB1"
 
 # The common blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt true
+write_makefiles "${MY_DIR}"/proprietary-files.txt true
 
 # We are done with common
 write_footers
@@ -40,8 +40,9 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
     # Warning headers and guards
     write_headers
 
-# The device blobs
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
+    # The device blobs
+    write_makefiles "${MY_DIR}"/../${DEVICE}/proprietary-files.txt true
 
-# We are done with device
-write_footers
+    # We are done with device
+    write_footers
+fi
