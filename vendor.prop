@@ -94,8 +94,6 @@ vendor.camera.aux.packagelist=com.evenwell.camera2,com.evenwell.fqc,com.tools.al
 persist.vendor.camera.fovc.enable=1
 ro.camera.switch.anim.delay=300
 ro.camera.record.anim.delay=200
-persist.capture.burst.exposures=0,-6,6
-persist.vendor.camera.ven_hdr=0
 vendor.camera.c2d.rotation=0
 persist.camera.ffcolor=ffebb4
 persist.vendor.camera.fdvideo=1
@@ -118,14 +116,20 @@ ro.opengles.version=196610
 ro.boot.fp=goodix
 qemu.hw.mainkeys=1
 
-# FM
-vendor.hw.fm.init=0
-
-# Misc
-persist.gsmapp.ezincall.video=false
-ro.com.google.acsa=true
-ro.apex.updatable=false
+# Media
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+vendor.mm.enable.qcom_parser=13623295
+persist.mm.enable.prefetch=true
 vendor.vidc.enc.disable.pq=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+vidc.enc.dcvs.extra-buff-count=2
 
 # NFC
 ro.boot.nfc=nxp

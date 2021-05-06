@@ -20,12 +20,6 @@ ro.bluetooth.a4wp=false
 ro.bluetooth.emb_wp_mode=true
 ro.bluetooth.wipower=true
 
-# Camera
-persist.ts.rtmakeup=false
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
-persist.vendor.camera.privapp.list=org.codeaurora.snapcam
-persist.camera.privapp.list=org.codeaurora.snapcam
-
 # CNE
 persist.vendor.cne.feature=1
 
@@ -81,21 +75,6 @@ telephony.lteOnCdmaDevice=1
 
 # IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
-
-# Media
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-scan=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-mm.enable.smoothstreaming=true
-vendor.mm.enable.qcom_parser=13623295
-persist.mm.enable.prefetch=true
-vendor.vidc.enc.disable.pq=true
-media.stagefright.thumbnail.prefer_hw_codecs=true
-vidc.enc.dcvs.extra-buff-count=2
 
 # Radio
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
