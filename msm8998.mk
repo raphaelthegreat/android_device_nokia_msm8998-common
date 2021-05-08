@@ -83,7 +83,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    audio.primary.msm8998
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
