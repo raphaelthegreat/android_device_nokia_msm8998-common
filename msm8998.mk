@@ -88,23 +88,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
-    libaudioroute \
     libaacwrapper \
     libaudio-resampler \
     libaudiopreprocessing \
     libbatterylistener \
     libcirrusspkrprot \
-    libcomprcapture \
-    libeffectsconfig \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndmonitor \
-    libspkrprot \
-    libssrec \
     libtinycompress \
     libtinycompress.vendor \
     libvolumelistener
