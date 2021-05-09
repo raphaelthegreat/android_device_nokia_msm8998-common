@@ -67,6 +67,9 @@ function blob_fixup() {
             ;;
 
         ## NB1 Patches
+        vendor/lib/hw/audio.primary.msm8998.so|vendor/lib64/hw/audio.primary.msm8998.so)
+            "${PATCHELF}" --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+            ;;
             # Patch blobs for VNDK
         vendor/bin/gx_fpd)
             "${PATCHELF}" --replace-needed "libunwind.so" "libunwind-vendor.so" "${2}" 
