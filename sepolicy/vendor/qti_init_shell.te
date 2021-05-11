@@ -1,3 +1,5 @@
+set_prop(qti_init_shell, system_prop)
+
 allow qti_init_shell { sysfs sysfs_dm }:file rw_file_perms;
 allow qti_init_shell ctl_start_prop:property_service set;
 allow qti_init_shell ctl_stop_prop:property_service set;
