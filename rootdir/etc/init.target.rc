@@ -370,5 +370,6 @@ service wireless-init /vendor/bin/wireless_init -i
 
 service vendor.hvdcp_opti /vendor/bin/hvdcp_opti
     class main
-    user root
+    user system
     group system wakelock
+    capabilities BLOCK_SUSPEND WAKE_ALARM
