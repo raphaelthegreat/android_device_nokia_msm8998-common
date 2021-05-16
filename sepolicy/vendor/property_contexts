@@ -60,6 +60,7 @@ camera.lens.front.infinite			u:object_r:vendor_camera_prop:s0
 camera.main.opened                  u:object_r:vendor_camera_prop:s0
 camera.aux.opened                   u:object_r:vendor_camera_prop:s0
 camera.front.opened                 u:object_r:vendor_camera_prop:s0
+camera.tunning.live                 u:object_r:vendor_camera_prop:s0
 
 # Power
 vendor.powerhal.                    u:object_r:vendor_power_prop:s0
