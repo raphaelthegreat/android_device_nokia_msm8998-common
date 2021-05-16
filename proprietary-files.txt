@@ -762,6 +762,15 @@ vendor/lib64/sensors.ssc.so
 vendor/lib64/sensor_calibrate.so
 vendor/lib64/libsns_low_lat_stream_stub.so
 
+# SSR
+vendor/bin/ssr_diag
+vendor/bin/ssr_setup
+vendor/bin/subsystem_ramdump
+vendor/lib/libSubSystemShutdown.so
+vendor/lib/libsubsystem_control.so
+vendor/lib64/libSubSystemShutdown.so
+vendor/lib64/libsubsystem_control.so
+
 # Thermal
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal-engine-cobalt.conf
@@ -780,6 +789,7 @@ vendor/lib64/libtime_genoff.so
 vendor/bin/cnss-daemon
 vendor/bin/cnss_diag
 vendor/bin/fstman
+vendor/bin/wireless_init
 
 # WFD
 bin/wfdservice
