@@ -1,9 +1,6 @@
 # Rmt
 genfscon debugfs /rmt_storage	u:object_r:debugfs_rmt:s0
 
-# Sensors
-genfscon proc /sensordata       u:object_r:proc_fih:s0
-
 # /proc/baseband - Baseband
 genfscon proc /baseband            u:object_r:proc_fih:s0
 

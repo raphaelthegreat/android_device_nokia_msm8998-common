@@ -150,7 +150,6 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Sepolicy
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := 2020-07-01
