@@ -371,8 +371,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    init.target.rc \
-    ueventd.qcom.rc
+    init.target.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
@@ -380,6 +379,9 @@ PRODUCT_PACKAGES += \
     init.qcom.wifi.sh \
     init.qcom.sh \
     init.qcom.usb.sh
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
 
 # RenderScript
 PRODUCT_PACKAGES += \
