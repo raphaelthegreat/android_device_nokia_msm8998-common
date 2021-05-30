@@ -53,6 +53,7 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so|181a8ab9b1d40705d3151821b53732c5566a284
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|aa08f9ec51392ed841f60ad08b7f083312c8c5ee
 
 # Audio
+system/etc/permissions/audiosphere.xml
 system/framework/audiosphere.jar
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
@@ -62,19 +63,71 @@ vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
+vendor/lib/libaudioconfigstore.so
 vendor/lib/libaudioparsers.so
+-vendor/lib/libaudio_log_utils.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
+vendor/lib/libsurround_3mic_proc.so
+vendor/lib/libtinycompress.so
 vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libaudiopreprocessing.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
+vendor/lib64/libaudioconfigstore.so
 vendor/lib64/libaudioparsers.so
+-vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libqtigef.so
+vendor/lib64/libtinycompress.so
 vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libaudiopreprocessing.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
+vendor/lib64/soundfx/libqcvirt.so
+
+# Audio (Hardware)
+vendor/lib/hw/audio.primary.default.so
+vendor/lib/hw/audio.primary.msm8998.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.usb.default.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libvolumelistener.so
+vendor/lib64/hw/audio.primary.default.so
+vendor/lib64/hw/audio.primary.msm8998.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.usb.default.so
+vendor/lib64/soundfx/libqcompostprocbundle.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libvolumelistener.so
+
+# Audio (hidls)
+vendor/lib/hw/android.hardware.audio.effect@2.0-impl.so
+vendor/lib/hw/android.hardware.audio.effect@4.0-impl.so
+vendor/lib/hw/android.hardware.audio@2.0-impl.so
+vendor/lib/hw/android.hardware.audio@4.0-impl.so
+vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so
+vendor/lib/android.hardware.audio.common-util.so
+vendor/lib/android.hardware.audio.common@2.0-util.so
+vendor/lib/android.hardware.audio.common@4.0-util.so
+vendor/lib/android.hardware.audio.common@5.0-util.so
+vendor/lib64/hw/android.hardware.audio.effect@2.0-impl.so
+vendor/lib64/hw/android.hardware.audio.effect@4.0-impl.so
+vendor/lib64/hw/android.hardware.audio@2.0-impl.so
+vendor/lib64/hw/android.hardware.audio@4.0-impl.so
+vendor/lib64/android.hardware.audio.common-util.so
+vendor/lib64/android.hardware.audio.common@2.0-util.so
+vendor/lib64/android.hardware.audio.common@4.0-util.so
+vendor/lib64/android.hardware.audio.common@5.0-util.so
 
 # Bluetooth (aptX) - from crosshatch-user 11 RQ2A.210305.006 7119741 release-keys
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
@@ -243,6 +296,17 @@ vendor/firmware/widevine.b05
 vendor/firmware/widevine.b06
 vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
+
+# DRM (Firmware)
+vendor/firmware/cppf.b00
+vendor/firmware/cppf.b02
+vendor/firmware/cppf.b03
+vendor/firmware/cppf.b04
+vendor/firmware/cppf.b05
+vendor/firmware/cppf.b06
+vendor/firmware/cppf.b07
+vendor/firmware/cppf.b01
+vendor/firmware/cppf.mdt
 
 # FM
 system/lib64/fm_helium.so
