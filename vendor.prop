@@ -123,6 +123,7 @@ vidc.enc.dcvs.extra-buff-count=2
 
 # NFC
 ro.boot.nfc=nxp
+ro.nfc.port=I2C
 ro.hardware.nfc_nci=nqx.default
 persist.nfc.support=true
 persist.nfc.smartcard.config=SIM1

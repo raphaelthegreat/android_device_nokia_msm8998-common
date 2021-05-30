@@ -497,6 +497,32 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 
+# NFC (Configs)
+vendor/etc/libnfc-brcm.conf
+vendor/etc/libnfc-mtp-NQ3XX.conf
+vendor/etc/libnfc-mtp-NQ4XX.conf
+vendor/etc/libnfc-mtp_default.conf
+vendor/etc/libnfc-mtp_rf1.conf
+vendor/etc/libnfc-mtp_rf2.conf
+vendor/etc/libnfc-nxp.conf
+vendor/etc/libnfc-qrd-NQ3XX.conf
+vendor/etc/libnfc-qrd-NQ4XX.conf
+vendor/etc/libnfc-qrd_default.conf
+vendor/etc/libnfc-qrd_rf1.conf
+vendor/etc/libnfc-qrd_rf2.conf
+
+# NFC (NXP)
+vendor/lib64/hal_libnfc.so
+vendor/lib64/nfc_nci.nqx.default.hw.so
+vendor/lib/hal_libnfc.so
+vendor/lib/nfc_nci.nqx.default.hw.so
+
+# NFC (Firmware)
+vendor/lib/libpn551_fw.so
+vendor/lib/libpn553_fw.so
+vendor/lib/libpn557_fw.so
+vendor/firmware/libpn548ad_fw.so
+
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libadpcmdec.so
