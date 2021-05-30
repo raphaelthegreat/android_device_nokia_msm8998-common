@@ -498,13 +498,11 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 
 # NFC (Configs)
-vendor/etc/libnfc-brcm.conf
 vendor/etc/libnfc-mtp-NQ3XX.conf
 vendor/etc/libnfc-mtp-NQ4XX.conf
 vendor/etc/libnfc-mtp_default.conf
 vendor/etc/libnfc-mtp_rf1.conf
 vendor/etc/libnfc-mtp_rf2.conf
-vendor/etc/libnfc-nxp.conf
 vendor/etc/libnfc-qrd-NQ3XX.conf
 vendor/etc/libnfc-qrd-NQ4XX.conf
 vendor/etc/libnfc-qrd_default.conf
