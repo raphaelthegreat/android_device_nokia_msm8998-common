@@ -28,6 +28,14 @@
 #include <pixelpowerstats/PowerStats.h>
 #include <pixelpowerstats/WlanStateResidencyDataProvider.h>
 
+#ifndef RPM_SYSTEM_STAT
+#define RPM_SYSTEM_STAT "/d/system_stats"
+#endif
+
+#ifndef WLAN_POWER_STAT
+#define WLAN_POWER_STAT "/sys/kernel/wlan/power_stats"
+#endif
+
 using android::OK;
 using android::sp;
 using android::status_t;
@@ -71,7 +79,7 @@ int main(int /* argc */, char ** /* argv */) {
              .lastEntrySupported = false}};
 
         sp<GenericStateResidencyDataProvider> rpmSdp =
-                new GenericStateResidencyDataProvider("/d/system_stats");
+                new GenericStateResidencyDataProvider(RPM_SYSTEM_STAT);
 
         uint32_t apssId = service->addPowerEntity("APSS", PowerEntityType::SUBSYSTEM);
         rpmSdp->addEntity(apssId, PowerEntityConfig("APSS", rpmStateResidencyConfigs));
@@ -105,7 +113,7 @@ int main(int /* argc */, char ** /* argv */) {
              .lastEntrySupported = false}};
 
          sp<GenericStateResidencyDataProvider> socSdp =
-                new GenericStateResidencyDataProvider("/d/system_stats");
+                new GenericStateResidencyDataProvider(RPM_SYSTEM_STAT);
 
         uint32_t socId = service->addPowerEntity("SoC", PowerEntityType::POWER_DOMAIN);
         socSdp->addEntity(socId, PowerEntityConfig(socStateResidencyConfigs));
@@ -115,7 +123,7 @@ int main(int /* argc */, char ** /* argv */) {
         // Add WLAN power entity
         uint32_t wlanId = service->addPowerEntity("WLAN", PowerEntityType::SUBSYSTEM);
         sp<WlanStateResidencyDataProvider> wlanSdp =
-                new WlanStateResidencyDataProvider(wlanId, "/d/wlan0/power_stats");
+                new WlanStateResidencyDataProvider(wlanId, WLAN_POWER_STAT);
         service->addStateResidencyDataProvider(wlanSdp);
     }
 
