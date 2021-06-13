@@ -271,6 +271,10 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
