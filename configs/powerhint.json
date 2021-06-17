@@ -252,12 +252,6 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "1171200"
-    },
-    {
-      "PowerHint": "INTERACTION",
       "Node": "TASchedtuneBoost",
       "Duration": 0,
       "Value": "20"
