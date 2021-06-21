@@ -92,6 +92,7 @@ persist.data.tcp_rst_drop=true
 persist.radio.flexmap_type=false
 ro.telephony.call_ring.multiple=false
 ro.telephony.use_old_mnc_mcc_format=true
+persist.radio.multisim.config=dsds
 
 # SurfaceFlinger
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
