@@ -849,7 +849,6 @@ vendor/lib64/libsubsystem_control.so
 
 # Thermal
 vendor/etc/thermal-engine.conf
-vendor/etc/thermal-engine-cobalt.conf
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
