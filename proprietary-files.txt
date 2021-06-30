@@ -1,5 +1,5 @@
 ## Common proprietary files
-## From Nokia/Avenger_00WW/A1N_sprout:10/QKQ1.190828.002/00WW_5_140:user/release-keys unless pinned
+## From Nokia/Avenger_00WW/A1N_sprout:10/QKQ1.190828.002/00WW_5_14L:user/release-keys unless pinned
 
 # ADSP
 vendor/bin/adsprpcd
