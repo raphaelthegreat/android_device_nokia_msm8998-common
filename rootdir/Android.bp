@@ -16,6 +16,12 @@
 
 // Scripts
 sh_binary {
+    name: "init.class_main.sh",
+    src: "bin/init.class_main.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.qcom.early_boot.sh",
     src: "bin/init.qcom.early_boot.sh",
     vendor: true,
