@@ -17,6 +17,7 @@
 COMMON_PATH := device/nokia/msm8998-common
 
 # Get non-open-source specific aspects
+$(call inherit-product, vendor/nokia/google/google.mk)
 $(call inherit-product, vendor/nokia/msm8998-common/msm8998-common-vendor.mk)
 
 # Setup dalvik vm configs
@@ -116,8 +117,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio.effect@5.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
+    android.hardware.audio.effect@5.0-impl
 
 # A2DP
 PRODUCT_PACKAGES += \

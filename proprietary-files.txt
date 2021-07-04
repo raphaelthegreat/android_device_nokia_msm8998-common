@@ -479,12 +479,6 @@ vendor/firmware/a540_zap.mdt
 vendor/firmware/a630_gmu.bin
 vendor/firmware/a630_sqe.fw
 
-# Hotword enrollment - from phoenix_sprout-phoenix_lao_com-user-11-RKQ1.201123.002-210641533e0c8-release-keys
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|ff5b936acb63a78d4a62643d38ef4f9074a00a8e;PRESIGNED
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|4b710f4dab6eef900d337185675c6cdfc95eab0b;PRESIGNED
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
-system_ext/framework/com.android.hotwordenrollment.common.util.jar|0492cd3db2e253e23b78e56fa8ea7b3a4b15edeb
-
 # IRQ Balance
 vendor/bin/msm_irqbalance
 
@@ -530,14 +524,12 @@ vendor/lib/libpn557_fw.so
 vendor/firmware/libpn548ad_fw.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.msm8998.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 vendor/lib/libsmwrapper.so
-vendor/lib64/hw/sound_trigger.primary.msm8998.so
 vendor/lib64/libgcs-calwrapper.so
 vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
