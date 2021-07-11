@@ -81,7 +81,6 @@ tunnel.decode=false
 # Bluetooth
 persist.vendor.bt.aac_frm_ctl.enabled=true
 vendor.qcom.bluetooth.soc=cherokee
-persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
 ro.vendor.bluetooth.wipower=false
 
 # Charger
