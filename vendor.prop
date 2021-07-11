@@ -119,6 +119,7 @@ persist.mm.enable.prefetch=true
 vendor.vidc.enc.disable.pq=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
 vidc.enc.dcvs.extra-buff-count=2
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # NFC
 ro.boot.nfc=nxp
