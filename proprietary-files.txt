@@ -54,11 +54,6 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# Atrace
-vendor/bin/hw/android.hardware.atrace@1.0-service
-vendor/etc/init/android.hardware.atrace@1.0-service.rc
--vendor/etc/vintf/manifest/android.hardware.atrace@1.0-service.xml
-
 # Audio
 etc/permissions/audiosphere.xml
 -framework/audiosphere.jar
@@ -190,11 +185,6 @@ vendor/lib64/vendor.qti.latency@2.0.so
 # Charger
 vendor/bin/hvdcp_opti
 
-# Configstore
-vendor/bin/hw/android.hardware.configstore@1.1-service
-vendor/etc/init/android.hardware.configstore@1.1-service.rc
-vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so
-
 # DPM
 product/bin/dpmd
 product/etc/dpm/dpm.conf
@@ -272,16 +262,6 @@ vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libmm-hdcpmgr.so
 
-# DRM (Hardware)
-vendor/bin/hw/android.hardware.drm@1.0-service
-vendor/bin/hw/android.hardware.drm@1.2-service.clearkey
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.0-service.rc
-vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib/hw/android.hardware.drm@1.0-impl.so
-vendor/lib64/hw/android.hardware.drm@1.0-impl.so
-
 # DRM (Qteeconnector)
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
@@ -293,6 +273,15 @@ vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
 # DRM (Widevine)
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libwvdrmengine.so
+
+# DRM (Firmware)
 vendor/firmware/cppf.b00
 vendor/firmware/cppf.b01
 vendor/firmware/cppf.b02
@@ -302,6 +291,8 @@ vendor/firmware/cppf.b05
 vendor/firmware/cppf.b06
 vendor/firmware/cppf.b07
 vendor/firmware/cppf.mdt
+
+# DRM (Firmware - Widevine)
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
 vendor/firmware/widevine.b02
@@ -311,11 +302,6 @@ vendor/firmware/widevine.b05
 vendor/firmware/widevine.b06
 vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-vendor/lib64/mediadrm/libwvdrmengine.so
 
 # FM
 lib/fm_helium.so
@@ -513,7 +499,6 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
-vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so
 vendor/lib/hw/sound_trigger.primary.sdm660.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libgcs-calwrapper.so
@@ -966,22 +951,16 @@ vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 
 # TUI
-product/lib/vendor.qti.hardware.tui_comm@1.0.so
-product/lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal
-vendor/bin/hw/android.hardware.thermal@1.0-service
 vendor/bin/thermal-engine
-vendor/etc/init/android.hardware.thermal@1.0-service.rc
 vendor/etc/thermal-engine.conf
-vendor/lib/hw/android.hardware.thermal@1.0-impl.so
-vendor/lib/libthermalclient.so
-vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalfeature.so
 vendor/lib64/libthermalioctl.so
 
@@ -994,14 +973,6 @@ vendor/lib64/hw/thermal.sdm660.so
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
-
-# Vibrator
-vendor/bin/hw/android.hardware.vibrator@1.0-service
-vendor/etc/init/android.hardware.vibrator@1.0-service.rc
-vendor/lib/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
-vendor/lib64/hw/vibrator.default.so
 
 # Wi-Fi
 vendor/bin/cnss-daemon
@@ -1053,8 +1024,3 @@ vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 vendor/lib64/libmiracast.so
 vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
-
-# Misc
-vendor/lib/libsynergy_loc_api.so
-vendor/lib64/libreffeature.so
-vendor/lib64/libsynergy_loc_api.so
