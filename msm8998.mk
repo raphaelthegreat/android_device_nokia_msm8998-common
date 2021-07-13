@@ -220,10 +220,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
-# Gatekeeper HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+# Gatekeeper
+# Note: gatekeeper 4.0 must be blobs to match firmware
 
 # fwk-detect
 PRODUCT_PACKAGES += \
@@ -283,9 +281,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
 
 # Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+# Note: keymaster 4.0 must be blobs to match firmware
 
 # Lights
 PRODUCT_PACKAGES += \
