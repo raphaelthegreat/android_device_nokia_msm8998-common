@@ -42,13 +42,10 @@ fi
 function blob_fixup() {
     case "${1}" in
         # Convert sdm660 to msm8998
-        vendor/lib/hw/vulkan.sdm660.so|vendor/lib64/hw/vulkan.sdm660.so)
+        vendor/lib/hw/vulkan.msm8998.so|vendor/lib64/hw/vulkan.msm8998.so)
           "${PATCHELF}" --set-soname "vulkan.msm8998.so" "${2}"
           ;;
-        vendor/lib/hw/sound_trigger.primary.sdm660.so|vendor/lib64/hw/sound_trigger.primary.sdm660.so)
-          "${PATCHELF}" --set-soname "sound_trigger.primary.msm8998.so" "${2}"
-          ;;
-        vendor/lib/hw/thermal.sdm660.so|vendor/lib64/hw/thermal.sdm660.so)
+        vendor/lib/hw/thermal.msm8998.so|vendor/lib64/hw/thermal.msm8998.so)
           "${PATCHELF}" --set-soname "thermal.msm8998.so" "${2}"
           ;;
         # Shim libdpmframework

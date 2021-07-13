@@ -399,7 +399,7 @@ vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libQTapGLES.so
-vendor/lib64/hw/vulkan.sdm660.so
+vendor/lib64/hw/vulkan.sdm660.so:vendor/lib64/hw/vulkan.msm8998.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -418,7 +418,7 @@ vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libQTapGLES.so
-vendor/lib/hw/vulkan.sdm660.so
+vendor/lib/hw/vulkan.sdm660.so:vendor/lib/hw/vulkan.msm8998.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -499,14 +499,12 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
 # Listen
-vendor/lib/hw/sound_trigger.primary.sdm660.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 vendor/lib/libsmwrapper.so
-vendor/lib64/hw/sound_trigger.primary.sdm660.so
 vendor/lib64/libgcs-calwrapper.so
 vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
@@ -955,8 +953,8 @@ vendor/lib64/libthermalfeature.so
 vendor/lib64/libthermalioctl.so
 
 # Thermal (Legacy)
-vendor/lib/hw/thermal.sdm660.so
-vendor/lib64/hw/thermal.sdm660.so
+vendor/lib/hw/thermal.sdm660.so:vendor/lib/hw/thermal.msm8998.so
+vendor/lib64/hw/thermal.sdm660.so:vendor/lib64/hw/thermal.msm8998.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
