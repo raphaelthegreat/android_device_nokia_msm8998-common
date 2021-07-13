@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright (C) 2012-2019 The Linux Foundation. All rights reserved.
+<!-- Copyright (C) 2015-2019 The Linux Foundation. All rights reserved.
      Not a contribution.
-
-     Copyright (C) 2012-2013 The Android Open Source Project
+     Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,5 +22,16 @@
         <MediaCodec name="OMX.qti.audio.decoder.flac" type="audio/flac" rank="0">
             <Limit name="concurrent-instances" max="10" />
         </MediaCodec>
+        <MediaCodec name="OMX.nokia.ozoaudio.decoder" type="audio/ozoaudio">
+            <Limit name="channel-count" max="8" />
+            <Limit name="sample-rate" ranges="48000" />
+            <Limit name="bitrate" range="8000-960000" />
+        </MediaCodec>
     </Decoders>
+    <Encoders>
+        <MediaCodec name="OMX.nokia.ozoaudio.encoder" type="audio/ozoaudio">
+            <Limit name="sample-rate" ranges="48000" />
+            <Limit name="bitrate" range="128000-960000" />
+        </MediaCodec>
+    </Encoders>
 </Included>
