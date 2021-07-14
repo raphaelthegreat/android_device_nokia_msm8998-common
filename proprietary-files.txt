@@ -398,6 +398,7 @@ vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/hw/vulkan.sdm660.so:vendor/lib64/hw/vulkan.msm8998.so
 vendor/lib64/libadreno_utils.so
@@ -417,6 +418,7 @@ vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/hw/vulkan.sdm660.so:vendor/lib/hw/vulkan.msm8998.so
 vendor/lib/libadreno_utils.so
@@ -451,7 +453,6 @@ vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
 # Graphics (Firmware)
-etc/firmware/hx_criteria.csv
 vendor/firmware/a225p5_pm4.fw
 vendor/firmware/a225_pfp.fw
 vendor/firmware/a225_pm4.fw
@@ -539,8 +540,6 @@ vendor/lib/libOmxWmaDec.so
 vendor/lib/libstagefright_soft_mpeg2dec.so
 vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib/libvqzip.so
-vendor/lib/vndk/libstagefright_foundation.so
-vendor/lib/vndk/libstagefright_omx.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
@@ -603,12 +602,8 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
-product/lib/vendor.display.color@1.0.so
-product/lib/vendor.display.postproc@1.0.so
-product/lib64/vendor.display.color@1.0.so
-product/lib64/vendor.display.postproc@1.0.so
-vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/mm-pp-dpps
+vendor/bin/hw/vendor.display.color@1.0-service
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/lib64/libdisp-aba.so
 vendor/lib64/vendor.display.color@1.0.so
